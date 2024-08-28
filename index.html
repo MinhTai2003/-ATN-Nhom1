@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Trang Chủ</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="header-main" id="headerMain">
+        <div class="header-main-logo">
+            <a href="index.html"><img src="./images/logo.png" width="170px" alt=""></a>
+        </div>
+        <div class="header-main-sidebar">
+            <ul class="menu">
+                <li class="items"><a href="airlineTicket.html"><i class="fa-solid fa-plane"></i>Vé máy bay</a></li>
+                <li class="items"><a href="hotel.html"><i class="fa-solid fa-hotel"></i>Khách sạn</a></li>
+                <li class="items"><a href="tour.html"><i class="fa-solid fa-location-dot"></i>Tour du lịch</a></li>
+                <li class="items" id="fixedItem">
+                   <a class="items" href="#"><i class="fa-solid fa-sailboat"></i><span>Du thuyền Hạ Long</span></a>
+                </li>
+                <li class="dropdown-menu">
+                    <i class="fa-solid fa-ellipsis dropdown-toggle" onclick="toggleDropdown(event)"></i>
+                    <div class="dropdown-menu-content">
+                        <a class="items" href="#" data-text="Vinpearl" data-icon="fa-brands fa-vine" onclick="swapItems(event, 'Vinpearl', 'fa-brands fa-vine')">
+                            <i class="fa-brands fa-vine"></i>Vinpearl
+                        </a>
+                        <a class="items" href="#" data-text="Combo khuyến mãi" data-icon="fa-solid fa-percent" onclick="swapItems(event, 'Combo khuyến mãi', 'fa-solid fa-percent')">
+                            <i class="fa-solid fa-percent"></i>Combo khuyến mãi
+                        </a>
+                        <a class="items" href="#" data-text="Vé vui chơi" data-icon="fa-solid fa-ticket" onclick="swapItems(event, 'Vé vui chơi', 'fa-solid fa-ticket')">
+                            <i class="fa-solid fa-ticket"></i>Vé vui chơi
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-login-signin">
+            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <!--Slide-->
+        <div class="slide-show">
+            <div class="list-images">
+                <img class="imgs" src="./images/slide1.jpg" alt="">
+                <img class="imgs" src="./images/slide2.jpg" alt="">
+                <img class="imgs" src="./images/slide3.jpg" alt="">
+                <img class="imgs" src="./images/slide4.jpg" alt="">
+            </div>
+            <div class="arrow">
+                <div class="arrow-left btns"><i class="fa-solid fa-chevron-left"></i></div>
+                <div class="arrow-right btns"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="index-images">
+                <div class="index-item index-item-0 active"></div>
+                <div class="index-item index-item-1"></div>
+                <div class="index-item index-item-2"></div>
+                <div class="index-item index-item-3"></div>
+            </div>
+        </div>
+        <!--Filter search-->
+        <div class="filter-search-index">
+            <div class="wrapper-filter-index">
+                <div class="filter-menu-index">
+                    <ul class="list-menu-index">
+                        <li class="menu-item-index" id="itemIndex1" onclick="showContainer(1)">Vé máy bay</li>
+                        <li class="menu-item-index" id="itemIndex2" onclick="showContainer(2)">Khách sạn</li>
+                        <li class="menu-item-index" id="itemIndex3" onclick="showContainer(3)">Tour du lịch</li>
+                    </ul>
+                </div>
+                <div class="filter-content-index">
+                    <div id="containerIndex1" class="container-index active">
+                        <div class="filter-content-1">
+                        <div class="content-left-index">
+                            <div class="content-left-1">
+                                <div class="departure-point">
+                                    <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Điểm đi</div>
+                                        <div class="text2" id="swaptext1">Chọn địa điểm</div>
+                                    </div>
+                                </div>
+                                <div class="swap" id="swap"><i class="fa-solid fa-right-left"></i></div>
+                                <div class="arrival-point">
+                                    <div class="icon"><i class="fa-solid fa-plane-arrival"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Điểm đến</div>
+                                        <div class="text2" id="swaptext2">Chọn địa điểm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-left-2">
+                                <div class="departure-date">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Ngày đi</div>
+                                        <div class="text2">Chọn ngày đi</div>
+                                    </div>
+                                </div>
+                                <div class="arrival-date">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Ngày về</div>
+                                        <div class="text2">Chọn ngày về</div>
+                                    </div>
+                                </div>
+                                <div class="passenger">
+                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Hành khách</div>
+                                        <div class="text2">Chọn số lượng</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-right">
+                            <div class="content-right-1">
+                                <div class="btn-check">
+                                    <input type="checkbox" id="check">
+                                    <label for="check" class="button-check"></label>
+                                </div>
+                                <div class="ticket-cheap">Tìm vé rẻ nhất</div>
+                            </div>
+                            <div class="content-right-2">
+                               <div class="find-flights"><a href="#">Tìm chuyến bay</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="containerIndex2" class="container-index">
+                        <div class="filter-content-2">
+                        <div class="content-left">
+                            <div class="left-1">
+                                <div class="location">
+                                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Địa điểm</div>
+                                        <div class="text2">Thành phố, địa danh, khách sạn...</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-2">
+                                <div class="departure-date">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Nhận phòng</div>
+                                        <div class="text2">Chọn ngày</div>
+                                    </div>
+                                </div>
+                                <div class="arrival-date">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Trả phòng</div>
+                                        <div class="text2">Chọn ngày</div>
+                                    </div>
+                                </div>
+                                <div class="passenger">
+                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                                    <div class="text">
+                                        <div class="text1">Hành khách</div>
+                                        <div class="text2">Chọn số lượng</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-right">
+                            <div class="find-hotel-index">
+                               <div class="btn-findHotel"><a href="#">Tìm khách sạn</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="containerIndex3" class="container-index">
+                        <div class="filter-content-3">
+                            <div class="place">
+                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="text">
+                                    <div class="text1">Địa điểm</div>
+                                    <div class="text2">Bạn muốn đi đâu</div>
+                                </div>
+                            </div>
+                            <div class="departure-location">
+                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="text">
+                                    <div class="text1">Khởi hành từ</div>
+                                    <div class="text2">Vui lòng chọn</div>
+                                </div>
+                            </div>
+                            <div class="findNow">
+                                <div class="btn-findNow"><a href="#">Tìm ngay</a></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <!--Brand-->
+        <div class="brand-index">
+            <div class="list-brand">
+                <div class="journey">
+                    <img class="journey-img" src="../images/14-nam.png" alt="">
+                    <div class="journey-text">
+                        <div class="journey-text-1">14 năm chặng đường</div>
+                        <div class="journey-text-2">chinh phục một niềm tin</div>
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="achievement-content">
+                        <img class="achievement-img" src="../images/thuonghieu1.png" alt="">
+                        <div class="achievement-text">Luôn có giá tốt</div>
+                    </div>
+                    <div class="achievement-content">
+                        <img class="achievement-img" src="../images/thuonghieu2.png" alt="">
+                        <div class="achievement-text">Công ty du lịch hàng đầu Việt Nam</div>
+                    </div>
+                    <div class="achievement-content">
+                        <img class="achievement-img" src="../images/thuonghieu3.png" alt="">
+                        <div class="achievement-text">99% khách hàng hài lòng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--menu-small-->
+    <div class="menu-small">
+        <div class="list-menusmall">
+            <div class="menusmall-items">
+                <a href="airlineTicket.html"><img class="menusmall-img" src="./images/menusmall1.svg" alt=""></a>
+                <div class="menusmall-text">Vé máy bay</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="hotel.html"><img class="menusmall-img" src="./images/menusmall2.svg" alt=""></a>
+                <div class="menusmall-text">Khách sạn</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="tour.html"><img class="menusmall-img" src="./images/menusmall3.svg" alt=""></a>
+                <div class="menusmall-text">Tour du lịch</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="#"><img class="menusmall-img" src="./images/menusmall4.svg" alt=""></a>
+                <div class="menusmall-text">Combo khuyến mãi</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="#"><img class="menusmall-img" src="./images/menusmall5.svg" alt=""></a>
+                <div class="menusmall-text">Du thuyền Hạ Long</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="#"><img class="menusmall-img" src="./images/menusmall6.svg" alt=""></a>
+                <div class="menusmall-text">Nghỉ dưỡng Vinpearl</div>
+            </div>
+            <div class="menusmall-items">
+                <a href="#"><img class="menusmall-img" src="./images/menusmall7.svg" alt=""></a>
+                <div class="menusmall-text">Vé vui chơi</div>
+            </div>
+        </div>
+    </div>
+    <div class="hot-promotion">
+        <div class="list-hot-promotion">
+        <div class="title">Khuyến mãi <span>Hot</span> tại BestPrice</div>
+        <div class="content">
+            <a href="#"><img class="hp-img" src="./images/hot-promotion1.jpg" alt=""></a>
+            <a href="#"><img class="hp-img" src="./images/hot-promotion2.jpg" alt=""></a>
+            <a href="#"><img class="hp-img" src="./images/hot-promotion3.jpg" alt=""></a>
+        </div>
+    </div>
+    </div>
+    <!--partner-->
+    <!--airline-partner-->
+    <div class="airline-partner">
+        <div class="airline-partner-content">
+            <div class="airline-partner-left">
+                <div class="title">Đối tác hàng không</div>
+                <div class="text">Với hệ thống tìm kiếm và so sánh giá linh hoạt, 
+                    khách hàng sẽ đặt được vé máy bay giá rẻ nhất</div>
+            </div>
+            <div class="airline-partner-right">
+                <a href=""><img src="./images/airline-partner-1.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-2.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-3.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-4.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-5.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-6.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-7.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-8.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-9.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-10.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-11.png" alt=""></a>
+                <a href=""><img src="./images/airline-partner-12.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--hotel-partner-->
+    <div class="hotel-partner">
+        <div class="hotel-partner-content">
+            <div class="hotel-partner-left">
+                <div class="title">Đối tác khách sạn hàng đầu</div>
+                <div class="text">Chúng tôi liên kết chọn lọc với những đối 
+                    tác uy tín, chất lượng để mang đến bạn những trải nghiệm tuyệt vời.</div>
+            </div>
+            <div class="hotel-partner-right">
+                <a href=""><img src="./images/hotel-partner-1.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-2.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-3.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-4.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-5.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-6.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-7.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-8.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-9.png" alt=""></a>
+                <a href=""><img src="./images/hotel-partner-10.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--About Website-->
+    <div class="aboutWeb">
+        <div class="aboutWeb-content">
+        <div class="title">Giới thiệu về BestPice</div>
+        <iframe class="video-about" src="https://www.youtube.com/embed/-pP-Ycnxnrg?si=I9d9RnLCDsd3e0-j" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!--Awards-->
+    <div class="awards">
+        <div class="awards-content">
+            <div class="awards-title">Thành tựu & giải thưởng</div>
+            <div class="list-awards">
+                <div class="awards-item">
+                    <img src="./images/awards-1.png" alt="">
+                    <div class="text">Top 10 Dịch vụ du lịch được yêu thích nhất</div>
+                </div>
+                <div class="awards-item">
+                    <img src="./images/awards-2.png" alt="">
+                    <div class="text">Công ty có khách đặt tour trực tiếp nhiều nhất năm</div>
+                </div>
+                <div class="awards-item">
+                    <img src="./images/awards-3.png" alt="">
+                    <div class="text">Chứng nhận Traveler's Choice từ Tripadvisor</div>
+                </div>
+                <div class="awards-item">
+                    <img src="./images/awards-4.png" alt="">
+                    <div class="text">Đối tác chiến lược hàng đầu của Vinpearl</div>
+                </div>
+                <div class="awards-item">
+                    <img src="./images/awards-5.png" alt="">
+                    <div class="text">Top đại lý xuất sắc của các hãng hàng không</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Overview-->
+    <div class="overview">
+        <div class="overview-content">
+            <div class="list-overview">
+                <div class="overview-title">Du lịch nước ngoài</div>
+                <div class="overview-items">
+                    <div class="item"><a href="">Du lịch Thái Lan</a></div>
+                    <div class="item"><a href="">Du lịch Nhật Bản</a></div>
+                    <div class="item"><a href="">Du lịch Hàn Quốc</a></div>
+                    <div class="item"><a href="">Du lịch Úc</a></div>
+                    <div class="item"><a href="">Du lịch Singapore</a></div>
+                    <div class="item"><a href="">Du lịch Trung Quốc</a></div>
+                    <div class="item"><a href="">Du lịch Đài Loan</a></div>
+                    <div class="item"><a href="">Du lịch Mỹ</a></div>
+                    <div class="item"><a href="">Du lịch Phượng Hoàng Cổ Trấn</a></div>
+                    <div class="item"><a href="">Du lịch Dubai</a></div>
+                </div>
+            </div>
+            <div class="list-overview">
+                <div class="overview-title">Du lịch trong nước</div>
+                <div class="overview-items">
+                    <div class="item"><a href="">Du lịch Sa Pa</a></div>
+                    <div class="item"><a href="">Du lịch Đà Nẵng</a></div>
+                    <div class="item"><a href="">Du lịch Nha Trang</a></div>
+                    <div class="item"><a href="">Du lịch Ninh Bình</a></div>
+                    <div class="item"><a href="">Du lịch Hạ Long</a></div>
+                    <div class="item"><a href="">Du lịch Đà Lạt</a></div>
+                    <div class="item"><a href="">Du lịch Quy Nhơn</a></div>
+                    <div class="item"><a href="">Du lịch Phú Quốc</a></div>
+                    <div class="item"><a href="">Du lịch Đông Tây Bắc</a></div>
+                    <div class="item"><a href="">Du lịch Miền Tây</a></div>
+                </div>
+            </div>
+            <div class="list-overview">
+                <div class="overview-title">Khách sạn</div>
+                <div class="overview-items">
+                    <div class="item"><a href="">Khách sạn Sa Pa</a></div>
+                    <div class="item"><a href="">Khách sạn Đà Nẵng</a></div>
+                    <div class="item"><a href="">Khách sạn Nha Trang</a></div>
+                    <div class="item"><a href="">Khách sạn Ninh Bình</a></div>
+                    <div class="item"><a href="">Khách sạn Hạ Long</a></div>
+                    <div class="item"><a href="">Khách sạn Đà Lạt</a></div>
+                    <div class="item"><a href="">Khách sạn Quy Nhơn</a></div>
+                    <div class="item"><a href="">Khách sạn Phú Quốc</a></div>
+                    <div class="item"><a href="">Khách sạn Hà Giang</a></div>
+                    <div class="item"><a href="">Khách sạn Hà Nội</a></div>
+                </div>
+            </div>
+            <div class="list-overview">
+                <div class="overview-title">Du thuyền Hạ Long</div>
+                <div class="overview-items">
+                    <div class="item"><a href="">Du thuyền Ambassador 1 ngày</a></div>
+                    <div class="item"><a href="">Du thuyền Mon Cheri</a></div>
+                    <div class="item"><a href="">Du thuyền Amethyst 1 ngày</a></div>
+                    <div class="item"><a href="">Du thuyền Scarlet Pearl</a></div>
+                    <div class="item"><a href="">Du thuyền Rosy</a></div>
+                    <div class="item"><a href="">Du thuyền Ambassador</a></div>
+                    <div class="item"><a href="">Du thuyền Paradise Delight</a></div>
+                    <div class="item"><a href="">Du thuyền Light 1 ngày</a></div>
+                    <div class="item"><a href="">Du thuyền Sea Octopus 1 ngày </a></div>
+                    <div class="item"><a href="">Du thuyền Peony</a></div>
+                </div>
+            </div>
+            <div class="list-overview">
+                <div class="overview-title">Vé máy bay đi</div>
+                <div class="overview-items">
+                    <div class="item"><a href="">Vé máy bay đi Hà Nội</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Hồ Chí Minh</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Đà Nẵng</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Nha Trang</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Phú Quốc</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Thái Lan</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Nhật Bản</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Hàn Quốc</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Úc</a></div>
+                    <div class="item"><a href="">Vé máy bay đi Singapore</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <Footer class="footer">
+        <div class="footer-container-1">
+            <div class="footer-1">
+            <div class="footer-left">
+                <div class="title-1">
+                    <img src="./images/footer1.svg" alt="">
+                </div>
+                <div class="title-2">Tập đoàn BPGroup</div>
+                <div class="title-3">
+                    <div class="title-3-name">Công ty Cổ Phần Công nghệ Du Lịch BestPrice</div>
+                    <div class="title-3-text">
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/Lp5KAXdmTcRAPX1Q9">57 Trần Quốc Toản, phường Trần Hưng Đạo, quận Hoàn Kiếm, Hà Nội. (024) 7307 2605</a></div>
+                        </div>
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/e52wgXkZHd2dBYew6">Số 32, đường 208, Cái Tắt, An Đồng, An Dương, Hải Phòng. (024) 7307 2605</a></div>
+                        </div>
+                        <div class="content">Giấy phép kinh doanh số: 0104679428. Ngày cấp: 26/05/2010. Nơi cấp: Sở KH & ĐT TP Hà Nội.</div>
+                    </div>
+                </div>
+                <div class="title-3 title3-cover">
+                    <div class="title-3-name">Công ty Cổ phần Du lịch BestPrice Việt Nam</div>
+                    <div class="title-3-text">
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/QCDL48Z3Ag9EmZdg7">21 Bùi Thị Xuân, Phường Bến Thành, Quận 1, Hồ Chí Minh. (028) 7307 2605</a></div>
+                        </div>
+                        <div class="content">Giấy phép kinh doanh số: 0318483750. Ngày cấp: 29/05/2024 Nơi cấp: Sở KH & ĐT TP HCM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-right-1">
+                    <div class="footer-right-item"><a href="">Vé máy bay</a></div>
+                    <div class="footer-right-item"><a href="">Khách sạn</a></div>
+                    <div class="footer-right-item"><a href="">Tour du lịch</a></div>
+                    <div class="footer-right-item"><a href="">Vinpearl</a></div>
+                    <div class="footer-right-item"><a href="">Combo du lịch</a></div>
+                    <div class="footer-right-item"><a href="">Du thuyền Hạ Long</a></div>
+                    <div class="footer-right-item"><a href="">Vé vui chơi</a></div>
+                </div>
+                <div class="footer-right-2">
+                    <div class="footer-right-item"><a href="">Về chúng tôi</a></div>
+                    <div class="footer-right-item"><a href="">Liên hệ</a></div>
+                    <div class="footer-right-item"><a href="">Chính sách riêng tư</a></div>
+                    <div class="footer-right-item"><a href="">Điều khoản và điều kiện</a></div>
+                    <div class="footer-right-item"><a href="">Hình thức thanh toán</a></div>
+                    <div class="footer-right-item"><a href="">BestPrice với báo chí</a></div>
+                    <div class="footer-right-item"><a href="">Chứng nhận và giải thưởng</a></div>
+                    <div class="footer-right-item"><a href="">Cẩm nang du lịch</a></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-container-2">
+            <div class="footer-2">
+                <div class="footer-2-item footer-2-text">các thương hiệu cùng tập đoàn bpgroup :</div>
+                <div class="footer-2-item"><img src="../images/footer3.png" alt=""></div>
+                <div class="footer-2-item"><img src="../images/footer4.png" alt=""></div>
+                <div class="footer-2-item"><img src="../images/footer5.png" alt=""></div>
+                <div class="footer-2-item"><img src="../images/footer6.png" alt=""></div>
+            </div>
+        </div>
+        <div class="form-promotion">
+            <div class="content">
+            <div class="image"><img src="./images/footer7.png" alt=""></div>
+            <div class="text">
+                <div class="text-1">Cơ hội giảm giá tới <span>50%</span></div>
+                <div class="text-2">Hãy đăng ký ngay để nhận ưu đãi bí mật từ BestPrice nhé!</div>
+            </div>
+            <!-- <input type="email" name="email" id="input-email" class="input-email" size="50" placeholder="Nhập email của bạn">
+            <div class="btn-signin-now"><a href="">Đăng ký ngay</a></div> -->
+        </div>
+        </div>
+    </Footer>
+</body>
+    <script src="js/app.js"></script>
+</html>

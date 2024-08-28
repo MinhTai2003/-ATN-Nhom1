@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="header-main" id="headerMain">
+        <div class="header-main-logo">
+            <a href="index.html"><img src="./images/logo.png" width="170px" alt=""></a>
+        </div>
+        <div class="header-main-sidebar">
+            <ul class="menu">
+                <li class="items"><a href="airlineTicket.html"><i class="fa-solid fa-plane"></i>Vé máy bay</a></li>
+                <li class="items"><a href="hotel.html"><i class="fa-solid fa-hotel"></i>Khách sạn</a></li>
+                <li class="items"><a href="tour.html"><i class="fa-solid fa-location-dot"></i>Tour du lịch</a></li>
+                <li class="items" id="fixedItem">
+                   <a class="items" href="#"><i class="fa-solid fa-sailboat"></i><span>Du thuyền Hạ Long</span></a>
+                </li>
+                <li class="dropdown-menu">
+                    <i class="fa-solid fa-ellipsis dropdown-toggle" onclick="toggleDropdown(event)"></i>
+                    <div class="dropdown-menu-content">
+                        <a class="items" href="#" data-text="Vinpearl" data-icon="fa-brands fa-vine" onclick="swapItems(event, 'Vinpearl', 'fa-brands fa-vine')">
+                            <i class="fa-brands fa-vine"></i>Vinpearl
+                        </a>
+                        <a class="items" href="#" data-text="Combo khuyến mãi" data-icon="fa-solid fa-percent" onclick="swapItems(event, 'Combo khuyến mãi', 'fa-solid fa-percent')">
+                            <i class="fa-solid fa-percent"></i>Combo khuyến mãi
+                        </a>
+                        <a class="items" href="#" data-text="Vé vui chơi" data-icon="fa-solid fa-ticket" onclick="swapItems(event, 'Vé vui chơi', 'fa-solid fa-ticket')">
+                            <i class="fa-solid fa-ticket"></i>Vé vui chơi
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-login-signin">
+            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+        </div>
+    </header>
+    <div class="navigation">
+        <div class="navigation-left"><a href="hotel.html">Tour du lịch</a></div>
+        <div class="navigation-icon"><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="navigation-center">Hà Nội</div>
+        <div class="navigation-icon"><i class="fa-solid fa-chevron-right"></i></div>
+        <div class="navigation-center">Dream Dragon Resort</div>
+    </div>
+    <div class="tourBooking-main">
+    <div class="tourBooking-title">HCM - Hà Nội - Sapa - Lào Cai - Ninh Bình - Hạ Long 5N4Đ</div>
+    <div class="tourBooking-header">
+        <div class="tourBooking-left">
+        <div class="slide-tourBooking">
+                <button class="arrowLeft-tour">&#10094;</button>
+        <div class="slide-wrapper-tourBooking">
+        <div class="slide-tourBooking">
+            <img class="imgs-tour" src="./images/slide-tour-booking-1.jpg" alt="Image 1">
+            <img class="imgs-tour" src="./images/slide-tour-booking-2.jpg" alt="Image 2">
+            <img class="imgs-tour" src="./images/slide-tour-booking-3.jpg" alt="Image 3">
+            <img class="imgs-tour" src="./images/slide-tour-booking-4.jpg" alt="Image 4">
+            <img class="imgs-tour" src="./images/slide-tour-booking-5.jpg" alt="Image 5">
+            <img class="imgs-tour" src="./images/slide-tour-booking-1.jpg" alt="Image 1">
+            <img class="imgs-tour" src="./images/slide-tour-booking-2.jpg" alt="Image 2">
+            <img class="imgs-tour" src="./images/slide-tour-booking-3.jpg" alt="Image 3">
+            <img class="imgs-tour" src="./images/slide-tour-booking-4.jpg" alt="Image 4">
+            <img class="imgs-tour" src="./images/slide-tour-booking-5.jpg" alt="Image 5">
+        </div>
+    </div>
+    <button class="arrowRight-tour">&#10095;</button>
+            </div>
+        </div>
+        <div class="tourBooking-right">
+            <div class="information-tourBooking">
+                <div class="info-tourBooking">
+                    <div class="info-tourBooking-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="info-tourBooking-text">5 ngày 4 đêm</div>
+                    </div>
+                    <div class="info-tourBooking-item">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <div class="info-tourBooking-text">
+                            Khởi hành từ Hồ Chí Minh Thứ 4 hàng tuần
+                        </div>
+                    </div>
+                    <div class="info-tourBooking-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="info-tourBooking-text">
+                            Hồ Chí Minh - Hà Nội - Sapa - Lào Cai - Ninh Bình - Hạ Long
+                        </div>
+                    </div>
+                    <div class="info-tourBooking-other">
+                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                        <div class="info-tourBooking-text">
+                            Giảm 1TR + Free 20kg hành lý ký gửi
+                        </div>
+                    </div>
+                </div>
+                <div class="tourBooking-price">
+                    <div class="tourBooking-price-text">Giá từ: </div>
+                    <div class="tourBooking-original">10.390.000đ</div>
+                    <div class="tourBooking-promotion">9.390.000đ</div>
+                </div>
+                <div class="btn-tourBooking-booknow">
+                    <a href="">Giữ chỗ ngay</a>
+                </div>
+                <div class="btn-seenSchedule"><a href="">Xem lịch trình</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="introduce-tourBooking" id="introduceTourBooking">
+        <a href="#tourBooking-overview-name" class="introduce-menu-tourBooking active">Tổng quan</a>
+        <a href="#tourBooking-schedule-name" class="introduce-menu-tourBooking">Lịch trình</a>
+        <a href="#" class="introduce-menu-tourBooking">Quy định</a>
+        <a href="#evaluate-title-tb" class="introduce-menu-tourBooking">Đánh giá</a>
+        <a href="#qa-title-tb" class="introduce-menu-tourBooking">Hỏi đáp</a>
+        <a href="#tour-similar-name" class="introduce-menu-tourBooking">Tour tương tự</a>
+    </div>
+    <div class="introduce-tourBooking-container">
+    <div class="introduce-tourBooking-pharagraph">
+        Miền Bắc từ lâu đã là cái nôi của nền văn hóa, lịch sử lâu đời của nước ta, chứa 
+        đựng rất nhiều vẻ đẹp độc đáo của tạo hóa. Trong chuyến tour du lịch miền Bắc 5N4Đ: HCM - Hạ Long của BestPrice, du khách sẽ được tham quan, khám phá những công trình 
+        kiến trúc cổ, hoành tráng cùng cảnh quan thiên nhiên tuyệt mỹ như Quảng trường Ba Đình, 
+        Chùa Một Cột, quần thể danh thắng Tràng An, Vịnh Hạ Long,... Cùng BestPrice khám phá trọn vẹn vẻ đẹp thiên nhiên miền Bắc nhé!
+    </div>
+    <div class="tourBooking-overview">
+        <div class="tourBooking-overview-name" id="tourBooking-overview-name">Tổng quan</div>
+        <div class="tourBooking-overview-content">
+            <div class="tourBooking-overview-item">
+                <i class="fa-solid fa-check"></i>
+                <div class="tourBooking-overview-itemText">Khám phá thủ đô Hà Nội - 1000 năm văn hiến</div>
+            </div>
+            <div class="tourBooking-overview-item">
+                <i class="fa-solid fa-check"></i>
+                <div class="tourBooking-overview-itemText">Thưởng thức ẩm thực 36 phố phường Hà Nội</div>
+            </div>
+            <div class="tourBooking-overview-item">
+                <i class="fa-solid fa-check"></i>
+                <div class="tourBooking-overview-itemText">Được lựa chọn giờ bay đẹp với lịch cá nhân</div>
+            </div>
+            <div class="tourBooking-overview-item">
+                <i class="fa-solid fa-check"></i>
+                <div class="tourBooking-overview-itemText">Tìm hiểu sắc màu văn hóa vùng cao của các dân tộc tại Sapa</div>
+            </div>
+            <div class="tourBooking-overview-item">
+                <i class="fa-solid fa-check"></i>
+                <div class="tourBooking-overview-itemText">Tham quan Ninh Bình, Hạ Long - Di sản thế giới với thiên nhiên non nước hữu tình</div>
+            </div>
+        </div>
+        <div class="tourBooking-attractions">
+            <span>Điểm tham quan: </span> Đỉnh Fansipan, Bản Cát Cát, Nhà thờ đá, Chùa Trấn Quốc, Quảng Trường Ba Đình, Bảo Tàng Hồ Chí Minh, Chùa Một Cột, 
+            Chùa Bái Đính, Tràng An, Động Thiên Cung, Hòn Trống Mái, Đền Ngọc Sơn, Bái Đính - Tràng An, Làng Chài Cửa Vạn
+        </div>
+    </div>
+    <div class="tourBooking-schedule-name" id="tourBooking-schedule-name" >Lịch trình tour</div>
+    <div class="question-tourBooking">
+        <div class="question-tourBookingname" id="toggle-question-tb-1">
+            <div class="question-tb-name-left"><i class="fa-regular fa-circle"></i>Ngày 1: TP.HCM - Hà Nội - Sapa</div>
+            <div class="question-tb-name-right"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="question-tb-item question-tb-item-1" id="question-tb-item-1">
+            <div class="btext-tb-name">Buổi sáng</div>
+            <div class="btext-tb">Nhân viên đón đoàn khách tại sân bay Tân Sơn Nhất đáp chuyến bay đi Hà Nội. 
+                Sau 2 giờ bay, HDV đón đoàn xe khởi hành đi từ Hà Nội về thị trấn Sapa bắt đầu tour du lịch miền Bắc
+                Đến TP. Lào Cai, đoàn dừng chân dùng cơm trưa.</div>
+                <div class="btext-tb-name">Buổi trưa</div>
+            <div class="btext-tb">
+                Quý khách tiếp tục cuộc hành trình tham quan và chụp ảnh tại Cột mốc hữu nghị Việt Nam - Trung Quốc. Đây là cột mốc 
+                chủ quyền mang ý nghĩa lịch sử vô cùng quan trọng được xây dựng vào năm 2001 và hoàn thành vào năm 2002, đánh dấu chủ quyền 
+                của Việt Nam và Trung Quốc. Du khách có thể tự do chụp ảnh, tham quan quanh khu vực Cột Mốc biên giới.
+                <div class="btext-tb-name">Buổi tối</div>
+                <div class="btext-tb">Quý khách dùng bữa tối tại nhà hàng địa phương. Sau đó thăm thú, vui chơi tại Sapa và thưởng thức phong cảnh Sapa về đêm.</div>
+            </div>
+        </div>
+        <div class="question-tourBookingname" id="toggle-question-tb-2">
+            <div class="question-tb-name-left"><i class="fa-regular fa-circle"></i>Ngày 2: Sapa - Fansipan - Bản Cát Cát</div>
+            <div class="question-tb-name-right"><i class="fa-solid fa-chevron-down"></i></div>
+        </div> 
+        <div class="question-tb-item question-tb-item-2" id="question-tb-item-2">
+            <div class="btext-tb-name">Buổi sáng</div>
+            <div class="btext-tb">Nhân viên đón đoàn khách tại sân bay Tân Sơn Nhất đáp chuyến bay đi Hà Nội. 
+                Sau 2 giờ bay, HDV đón đoàn xe khởi hành đi từ Hà Nội về thị trấn Sapa bắt đầu tour du lịch miền Bắc
+                Đến TP. Lào Cai, đoàn dừng chân dùng cơm trưa.</div>
+                <div class="btext-tb-name">Buổi trưa</div>
+            <div class="btext-tb">
+                Quý khách tiếp tục cuộc hành trình tham quan và chụp ảnh tại Cột mốc hữu nghị Việt Nam - Trung Quốc. Đây là cột mốc 
+                chủ quyền mang ý nghĩa lịch sử vô cùng quan trọng được xây dựng vào năm 2001 và hoàn thành vào năm 2002, đánh dấu chủ quyền 
+                của Việt Nam và Trung Quốc. Du khách có thể tự do chụp ảnh, tham quan quanh khu vực Cột Mốc biên giới.
+                <div class="btext-tb-name">Buổi tối</div>
+                <div class="btext-tb">Quý khách dùng bữa tối tại nhà hàng địa phương. Sau đó thăm thú, vui chơi tại Sapa và thưởng thức phong cảnh Sapa về đêm.</div>
+            </div>
+        </div>
+        <div class="question-tourBookingname" id="toggle-question-tb-3">
+            <div class="question-tb-name-left"><i class="fa-regular fa-circle"></i>Ngày 3: Sapa - Hà Nội - Quảng trường Ba Đình</div>
+            <div class="question-tb-name-right"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="question-tb-item question-tb-item-3" id="question-tb-item-3">
+            <div class="btext-tb-name">Buổi sáng</div>
+            <div class="btext-tb">Nhân viên đón đoàn khách tại sân bay Tân Sơn Nhất đáp chuyến bay đi Hà Nội. 
+                Sau 2 giờ bay, HDV đón đoàn xe khởi hành đi từ Hà Nội về thị trấn Sapa bắt đầu tour du lịch miền Bắc
+                Đến TP. Lào Cai, đoàn dừng chân dùng cơm trưa.</div>
+                <div class="btext-tb-name">Buổi trưa</div>
+            <div class="btext-tb">
+                Quý khách tiếp tục cuộc hành trình tham quan và chụp ảnh tại Cột mốc hữu nghị Việt Nam - Trung Quốc. Đây là cột mốc 
+                chủ quyền mang ý nghĩa lịch sử vô cùng quan trọng được xây dựng vào năm 2001 và hoàn thành vào năm 2002, đánh dấu chủ quyền 
+                của Việt Nam và Trung Quốc. Du khách có thể tự do chụp ảnh, tham quan quanh khu vực Cột Mốc biên giới.
+                <div class="btext-tb-name">Buổi tối</div>
+                <div class="btext-tb">Quý khách dùng bữa tối tại nhà hàng địa phương. Sau đó thăm thú, vui chơi tại Sapa và thưởng thức phong cảnh Sapa về đêm.</div>
+            </div>
+        </div>
+        <div class="question-tourBookingname" id="toggle-question-tb-4">
+            <div class="question-tb-name-left"><i class="fa-regular fa-circle"></i>Ngày 4: Hà Nội - Ninh Bình - KDL Tràng An - Hạ Long</div>
+            <div class="question-tb-name-right"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="question-tb-item question-tb-item-4" id="question-tb-item-4">
+            <div class="btext-tb-name">Buổi sáng</div>
+            <div class="btext-tb">Nhân viên đón đoàn khách tại sân bay Tân Sơn Nhất đáp chuyến bay đi Hà Nội. 
+                Sau 2 giờ bay, HDV đón đoàn xe khởi hành đi từ Hà Nội về thị trấn Sapa bắt đầu tour du lịch miền Bắc
+                Đến TP. Lào Cai, đoàn dừng chân dùng cơm trưa.</div>
+                <div class="btext-tb-name">Buổi trưa</div>
+            <div class="btext-tb">
+                Quý khách tiếp tục cuộc hành trình tham quan và chụp ảnh tại Cột mốc hữu nghị Việt Nam - Trung Quốc. Đây là cột mốc 
+                chủ quyền mang ý nghĩa lịch sử vô cùng quan trọng được xây dựng vào năm 2001 và hoàn thành vào năm 2002, đánh dấu chủ quyền 
+                của Việt Nam và Trung Quốc. Du khách có thể tự do chụp ảnh, tham quan quanh khu vực Cột Mốc biên giới.
+                <div class="btext-tb-name">Buổi tối</div>
+                <div class="btext-tb">Quý khách dùng bữa tối tại nhà hàng địa phương. Sau đó thăm thú, vui chơi tại Sapa và thưởng thức phong cảnh Sapa về đêm.</div>
+            </div>
+        </div>
+        <div class="question-tourBookingname" id="toggle-question-tb-5">
+            <div class="question-tb-name-left"><i class="fa-regular fa-circle"></i>Ngày 5: Hạ Long - Sân bay Nội Bài</div>
+            <div class="question-tb-name-right"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="question-tb-item question-tb-item-5" id="question-tb-item-5">
+            <div class="btext-tb-name">Buổi sáng</div>
+            <div class="btext-tb">Nhân viên đón đoàn khách tại sân bay Tân Sơn Nhất đáp chuyến bay đi Hà Nội. 
+                Sau 2 giờ bay, HDV đón đoàn xe khởi hành đi từ Hà Nội về thị trấn Sapa bắt đầu tour du lịch miền Bắc
+                Đến TP. Lào Cai, đoàn dừng chân dùng cơm trưa.</div>
+                <div class="btext-tb-name">Buổi trưa</div>
+            <div class="btext-tb">
+                Quý khách tiếp tục cuộc hành trình tham quan và chụp ảnh tại Cột mốc hữu nghị Việt Nam - Trung Quốc. Đây là cột mốc 
+                chủ quyền mang ý nghĩa lịch sử vô cùng quan trọng được xây dựng vào năm 2001 và hoàn thành vào năm 2002, đánh dấu chủ quyền 
+                của Việt Nam và Trung Quốc. Du khách có thể tự do chụp ảnh, tham quan quanh khu vực Cột Mốc biên giới.
+                <div class="btext-tb-name">Buổi tối</div>
+                <div class="btext-tb">Quý khách dùng bữa tối tại nhà hàng địa phương. Sau đó thăm thú, vui chơi tại Sapa và thưởng thức phong cảnh Sapa về đêm.</div>
+            </div>
+        </div>
+        
+    </div>
+    <!--evaluate-->
+<div class="evaluate-tb">
+    <div class="evaluate-container-tb" >
+        <div class="evaluate-title-tb" id="evaluate-title-tb">Đánh giá của khách hàng</div>
+        <div class="box-evaluate-tb">
+            <div class="evaluate-item-tb-left">9</div>
+            <div class="evaluate-item-tb-right">
+            <div class="evaluate-item-tb-1">Tuyệt vời</div>
+            <div class="evaluate-item-tb-2"><span>3</span> đánh giá</div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--question & answer-->
+<div class="question-answer-tb">
+    <div class="qa-container-tb">
+        <div class="qa-title-tb" id="qa-title-tb">Hỏi đáp</div>
+        <div class="qa-content-tb">
+        <input type="text" class="input-text-tb" placeholder="Mời bạn để lại câu hỏi ...">
+        <div class="btn-askquestion-tb"><a href="">Đặt câu hỏi</a></div>
+    </div>
+    </div>
+</div>
+<!--tour tương tự - tour similar-->
+<div class="tour-similar-name" id="tour-similar-name">Tour du lịch tương tự</div>
+<div class="tour-tb-container">
+    <div class="tour-hot-item tour-similar-item">
+        <div class="tour-hot-img"><a href=""><img src="./images/tour-similar-1.jpg" alt=""></a></div>
+        <div class="tour-hot-info">
+            <div class="tour-hot-name"><a href="">Tour du lịch Sapa 3N2Đ: Cát Cát - Hàm Rồng - Fansipan</a></div>
+        <div class="tour-hot-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="location-text">Cát Cát - Hàm Rồng - Fansipan</div>
+        </div>
+        <div class="tour-hot-bottom">
+            <div class="tour-hot-time">3N2Đ</div>
+            <div class="tour-hot-price"><a href="">9.390.000đ</a></div>
+        </div>
+        </div>
+    </div>
+    <div class="tour-hot-item tour-similar-item">
+        <div class="tour-hot-img"><a href=""><img src="./images/tour-similar-2.jpg" alt=""></a></div>
+        <div class="tour-hot-info">
+            <div class="tour-hot-name"><a href="">Tour Mộc Châu 2N1Đ: Khám Phá Cao Nguyên</a></div>
+        <div class="tour-hot-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="location-text">Hà Nội - Mộc Châu - Thác Dải Yếm - Rừng Thông Bản Áng</div>
+        </div>
+        <div class="tour-hot-bottom">
+            <div class="tour-hot-time">2N1Đ</div>
+            <div class="tour-hot-price"><a href="">9.390.000đ</a></div>
+        </div>
+        </div>
+    </div>
+    <div class="tour-hot-item tour-similar-item">
+        <div class="tour-hot-img"><a href=""><img src="./images/tour-similar-3.jpg" alt=""></a></div>
+        <div class="tour-hot-info">
+            <div class="tour-hot-name"><a href="">Tour Sapa 2 ngày 1 đêm: Hà Nội - Sapa - Đỉnh Fansipan</a></div>
+        <div class="tour-hot-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="location-text"> Sapa 2 ngày 1 đêm: Hà Nội - Sapa - Đỉnh Fansipan</div>
+        </div>
+        <div class="tour-hot-bottom tour-similar-bottom">
+            <div class="tour-hot-time">2N1Đ</div>
+            <div class="tour-hot-price"><a href="">9.390.000đ</a></div>
+        </div>
+        </div>
+    </div>
+    <div class="tour-hot-item tour-similar-item">
+        <div class="tour-hot-img"><a href=""><img src="./images/tour-similar-4.jpg" alt=""></a></div>
+        <div class="tour-hot-info">
+            <div class="tour-hot-name"><a href="">Tây Bắc: Mộc Châu - Sơn La - Điện Biên - Lai Châu - Sapa</a></div>
+        <div class="tour-hot-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="location-text">Mộc Châu - Sơn La - Điện Biên - Lai Châu - Sapa</div>
+        </div>
+        <div class="tour-hot-bottom">
+            <div class="tour-hot-time">5N4Đ</div>
+            <div class="tour-hot-price"><a href="">9.390.000đ</a></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+ <!--Footer-->
+ <Footer class="footer">
+    <div class="footer-container-1">
+        <div class="footer-1">
+        <div class="footer-left">
+            <div class="title-1">
+                <img src="./images/footer1.svg" alt="">
+            </div>
+            <div class="title-2">Tập đoàn BPGroup</div>
+            <div class="title-3">
+                <div class="title-3-name">Công ty Cổ Phần Công nghệ Du Lịch BestPrice</div>
+                <div class="title-3-text">
+                    <div class="content">
+                        <img src="./images/footer2.png" alt="">
+                        <div class="text"><a href="https://maps.app.goo.gl/Lp5KAXdmTcRAPX1Q9">57 Trần Quốc Toản, phường Trần Hưng Đạo, quận Hoàn Kiếm, Hà Nội. (024) 7307 2605</a></div>
+                    </div>
+                    <div class="content">
+                        <img src="./images/footer2.png" alt="">
+                        <div class="text"><a href="https://maps.app.goo.gl/e52wgXkZHd2dBYew6">Số 32, đường 208, Cái Tắt, An Đồng, An Dương, Hải Phòng. (024) 7307 2605</a></div>
+                    </div>
+                    <div class="content">Giấy phép kinh doanh số: 0104679428. Ngày cấp: 26/05/2010. Nơi cấp: Sở KH & ĐT TP Hà Nội.</div>
+                </div>
+            </div>
+            <div class="title-3 title3-cover">
+                <div class="title-3-name">Công ty Cổ phần Du lịch BestPrice Việt Nam</div>
+                <div class="title-3-text">
+                    <div class="content">
+                        <img src="./images/footer2.png" alt="">
+                        <div class="text"><a href="https://maps.app.goo.gl/QCDL48Z3Ag9EmZdg7">21 Bùi Thị Xuân, Phường Bến Thành, Quận 1, Hồ Chí Minh. (028) 7307 2605</a></div>
+                    </div>
+                    <div class="content">Giấy phép kinh doanh số: 0318483750. Ngày cấp: 29/05/2024 Nơi cấp: Sở KH & ĐT TP HCM</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-right-1">
+                <div class="footer-right-item"><a href="">Vé máy bay</a></div>
+                <div class="footer-right-item"><a href="">Khách sạn</a></div>
+                <div class="footer-right-item"><a href="">Tour du lịch</a></div>
+                <div class="footer-right-item"><a href="">Vinpearl</a></div>
+                <div class="footer-right-item"><a href="">Combo du lịch</a></div>
+                <div class="footer-right-item"><a href="">Du thuyền Hạ Long</a></div>
+                <div class="footer-right-item"><a href="">Vé vui chơi</a></div>
+            </div>
+            <div class="footer-right-2">
+                <div class="footer-right-item"><a href="">Về chúng tôi</a></div>
+                <div class="footer-right-item"><a href="">Liên hệ</a></div>
+                <div class="footer-right-item"><a href="">Chính sách riêng tư</a></div>
+                <div class="footer-right-item"><a href="">Điều khoản và điều kiện</a></div>
+                <div class="footer-right-item"><a href="">Hình thức thanh toán</a></div>
+                <div class="footer-right-item"><a href="">BestPrice với báo chí</a></div>
+                <div class="footer-right-item"><a href="">Chứng nhận và giải thưởng</a></div>
+                <div class="footer-right-item"><a href="">Cẩm nang du lịch</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-container-2">
+        <div class="footer-2">
+            <div class="footer-2-item footer-2-text">các thương hiệu cùng tập đoàn bpgroup :</div>
+            <div class="footer-2-item"><img src="./images/footer3.png" alt=""></div>
+            <div class="footer-2-item"><img src="./images/footer4.png" alt=""></div>
+            <div class="footer-2-item"><img src="./images/footer5.png" alt=""></div>
+            <div class="footer-2-item"><img src="./images/footer6.png" alt=""></div>
+        </div>
+    </div>
+    <div class="form-promotion">
+        <div class="content">
+        <div class="image"><img src="./images/footer7.png" alt=""></div>
+        <div class="text">
+            <div class="text-1">Cơ hội giảm giá tới <span>50%</span></div>
+            <div class="text-2">Hãy đăng ký ngay để nhận ưu đãi bí mật từ BestPrice nhé!</div>
+        </div>
+    </div>
+    </div>
+</Footer>
+</body>
+
+<script>
+    document.getElementById("toggle-question-tb-1").addEventListener("click", function() {
+    document.getElementById("question-tb-item-1").classList.toggle("shrink");
+  });
+  document.getElementById("toggle-question-tb-2").addEventListener("click", function() {
+    document.getElementById("question-tb-item-2").classList.toggle("shrink");
+  });
+  document.getElementById("toggle-question-tb-3").addEventListener("click", function() {
+    document.getElementById("question-tb-item-3").classList.toggle("shrink");
+  });
+  document.getElementById("toggle-question-tb-4").addEventListener("click", function() {
+    document.getElementById("question-tb-item-4").classList.toggle("shrink");
+  });
+  document.getElementById("toggle-question-tb-5").addEventListener("click", function() {
+    document.getElementById("question-tb-item-5").classList.toggle("shrink");
+  });
+</script>
+<script src="./js/app.js"></script>
+</html>

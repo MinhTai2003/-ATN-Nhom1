@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Đặt phòng khách sạn</title>
+</head>
+<body>
+    <!--Header-->
+    <header class="header-main" id="headerMain">
+        <div class="header-main-logo">
+            <a href="index.html"><img src="./images/logo.png" width="170px" alt=""></a>
+        </div>
+        <div class="header-main-sidebar">
+            <ul class="menu">
+                <li class="items"><a href="airlineTicket.html"><i class="fa-solid fa-plane"></i>Vé máy bay</a></li>
+                <li class="items"><a href="hotel.html"><i class="fa-solid fa-hotel"></i>Khách sạn</a></li>
+                <li class="items"><a href="tour.html"><i class="fa-solid fa-location-dot"></i>Tour du lịch</a></li>
+                <li class="items" id="fixedItem">
+                   <a class="items" href="#"><i class="fa-solid fa-sailboat"></i><span>Du thuyền Hạ Long</span></a>
+                </li>
+                <li class="dropdown-menu">
+                    <i class="fa-solid fa-ellipsis dropdown-toggle" onclick="toggleDropdown(event)"></i>
+                    <div class="dropdown-menu-content">
+                        <a class="items" href="#" data-text="Vinpearl" data-icon="fa-brands fa-vine" onclick="swapItems(event, 'Vinpearl', 'fa-brands fa-vine')">
+                            <i class="fa-brands fa-vine"></i>Vinpearl
+                        </a>
+                        <a class="items" href="#" data-text="Combo khuyến mãi" data-icon="fa-solid fa-percent" onclick="swapItems(event, 'Combo khuyến mãi', 'fa-solid fa-percent')">
+                            <i class="fa-solid fa-percent"></i>Combo khuyến mãi
+                        </a>
+                        <a class="items" href="#" data-text="Vé vui chơi" data-icon="fa-solid fa-ticket" onclick="swapItems(event, 'Vé vui chơi', 'fa-solid fa-ticket')">
+                            <i class="fa-solid fa-ticket"></i>Vé vui chơi
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-login-signin">
+            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+        </div>
+    </header>
+    <!--body-->
+    <div class="container-main">
+    <div class="navigation">
+            <div class="navigation-left"><a href="hotel.html">Khách sạn</a></div>
+            <div class="navigation-icon"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="navigation-center">Hải phòng</div>
+            <div class="navigation-icon"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="navigation-center">Dream Dragon Resort</div>
+    </div>
+    <h2 class="title-main">Khách sạn nghỉ dưỡng gần Hà Nội</h2>
+    <div class="content-main">
+        <div class="content-main-left">
+            <div class="filter-title-hotelitem">
+                <div class="filter-icon"><i class="fa-solid fa-filter"></i></div>
+                <div class="filter-name-hotelitem">Bộ lọc</div>
+            </div>
+            <div class="list-filter">
+                <div class="filter-item">
+                    <h3>Loại hình lưu trú</h3>
+                    <form class="form form-1">
+                        <label class="label-input">
+                            <input type="checkbox" name="item1" value="item1" class="input-filter">
+                            Vinpearl
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item2" value="item2" class="input-filter">
+                            Resort - Nghỉ dưỡng
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item3">
+                                Villa - Biệt thự
+                        </label><br>
+                    </form>
+                </div>
+                <div class="filter-item">
+                    <h3>Hạng sao</h3>
+                    <form class="form form-2">
+                        <label class="label-input">
+                            <input type="checkbox" name="item1" value="item4" class="input-filter">
+                            Khách sạn 5*
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item2" value="item5" class="input-filter">
+                            Khách sạn 4*
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item6" class="input-filter">
+                            Khách sạn 3*
+                        </label><br>
+                    </form>
+                </div>
+                <div class="filter-item">
+                    <h3>Mức giá trong khoảng</h3>
+                    <form class="form form-3">
+                        <label class="label-input">
+                            <input type="checkbox" name="item1" value="item7" class="input-filter">
+                            Dưới 500 nghìn
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item2" value="item8" class="input-filter">
+                            Từ 500 nghìn đến 1 triệu
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item9" class="input-filter">
+                            Từ 1 triệu đến 2 triệu
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item10" class="input-filter">
+                            Từ 2 triệu đến 3 triệu
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item11" class="input-filter">
+                            Trên 3 triệu
+                        </label><br>
+                    </form>
+                </div>
+                <div class="filter-item">
+                    <h3>Tiện nghi khách sạn</h3>
+                    <form class="form form-4">
+                        <label class="label-input">
+                            <input type="checkbox" name="item1" value="item12" class="input-filter">
+                            Bãi biển riêng
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item2" value="item13" class="input-filter">
+                            Dịch vụ trông trẻ
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item14" class="input-filter">
+                            Bể bơi ngoài trời
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item15" class="input-filter">
+                            Bể bơi trong nhà
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item16" class="input-filter">
+                            Spa/Massage
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item17" class="input-filter">
+                            Wifi miễn phí
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item18" class="input-filter">
+                            Sân tennis
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item19" class="input-filter">
+                            Sân golf
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item20" class="input-filter">
+                            Chỗ đỗ xe
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item21" class="input-filter">
+                            Xe bus ra trung tâm
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item22" class="input-filter">
+                            Thang máy
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item23" class="input-filter">
+                            Đường dành cho xe lăn
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item24" class="input-filter">
+                            Câu cá
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item25" class="input-filter">
+                            Phòng hút thuốc
+                        </label><br>
+                        <label class="label-input>
+                            <input type="checkbox" name="item3" value="item26" class="input-filter">
+                            Cho thuê xe
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item27" class="input-filter">
+                            Quầy đặt tour du lịch
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item28" class="input-filter">
+                            Đưa đón sân bay
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item29" class="input-filter">
+                            Khu vực vui chơi trẻ em
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item30" class="input-filter">
+                            Phòng tập thể dục
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item31" class="input-filter">
+                            Karaoke
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item32" class="input-filter">
+                            Quán cafe
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item33" class="input-filter">
+                            Sòng bài
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item34" class="input-filter">
+                            Quầy Billard
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item35" class="input-filter">
+                            Dịch vụ BBQ
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item36" class="input-filter">
+                            Nhà hàng - Ẩm thực
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item37" class="input-filter">
+                            Dịch vụ hội họp
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item38" class="input-filter">
+                            Quán Bar
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item39" class="input-filter">
+                            Quầy hàng lưu niệm
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item40" class="input-filter">
+                            Ăn sáng miễn phí
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item41" class="input-filter">
+                            Giặt là quần áo
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item42" class="input-filter">
+                            Cầu trượt nước
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item43" class="input-filter">
+                            Thư viện
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item44" class="input-filter">
+                            Porker Club
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item45" class="input-filter">
+                            Phòng Cigar
+                        </label><br>
+                        <label class="label-input">
+                            <input type="checkbox" name="item3" value="item46" class="input-filter">
+                            Mini golf
+                        </label><br>
+                    </form>
+                    <div class="seemore-hide" id="toggleSeemoreHide">[+] Xem thêm</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-main-right">
+            <div class="bestoflike">
+                <img class="bestoflike-img" src="./images/bestof2024.png" alt="">
+                <div class="bestoflike-name"> 10 khách sạn được yêu thích nhất ở trong nước</div>
+            </div>
+            <div class="arrange">
+                <div class="arrange-name">Sắp xếp</div>
+                <div class="arrange-item active">BestPrice đề xuất</div>
+                <div class="arrange-item">Giá: Thấp đến cao</div>
+                <div class="arrange-item">Giá: Cao đến thấp</div>
+                <div class="arrange-item">Đánh giá cao nhất</div>
+            </div>
+            <div class="list-card">
+                <div class="card-item">
+                    <div class="card-img"><a href="hotelBooking.html"><img src="./images/dream-dragon-resort.jpg" alt=""></a></div>
+                    <div class="card-info">
+                        <div class="card-title">
+                            <div class="card-name"><a href="hotelBooking.html">Dream Dragon Resort</a></div>
+                            <div class="card-star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="card-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="location-text">Đồ Sơn, Hải Phòng</div>
+                        </div>
+                    <div class="card-evaluate">
+                        <div class="evaluate1"><a href=""><span>9.0</span>Tuyệt vời</a></div>
+                        <div class="evaluate2"><a href=""><span>- 0</span>đánh giá</a></div>
+                    </div>
+                    <div class="card-endow">
+                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                        <div class="endow-text">Độc quyền! Giảm đến 1 TRIỆU khi đặt phòng tại BestPrice</div>
+                    </div>
+                    <div class="card-convenient">
+                        <div class="convenient-text">Wifi miễn phí</div>
+                        <div class="convenient-text">Chỗ đỗ xe</div>
+                        <div class="convenient-text">Nhà hàng</div>
+                    </div>
+                    <div class="highlights">
+                        <div class="highlights-title" id="highlights-title-1">
+                            <div class="hl-name-hotelitem">Điểm nổi bật</div>
+                            <i id="rotateIcon" class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="highlights-content" id="highlights-content-1">
+                            <div class="highlight-content-item">
+                                <i class="fa-solid fa-check"></i>
+                                <div class="item-text">Tọa lạc giữa trung tâm Đồi Rồng</div>
+                            </div>
+                            <div class="highlight-content-item">
+                                <i class="fa-solid fa-check"></i>
+                                <div class="item-text">Bãi biển nhân tạo, bể bơi ngoài trời, bể bơi 4 mùa trong nhà</div>
+                            </div>
+                            <div class="highlight-content-item">
+                                <i class="fa-solid fa-check"></i>
+                                <div class="item-text">Nhà hàng, bar đa dạng: Au De Lisse, lobby bar, milky way rooftop bar</div>
+                            </div>
+                            <div class="highlight-content-item">
+                                <i class="fa-solid fa-check"></i>
+                                <div class="item-text">Phòng hội nghị sang trọng</div>
+                            </div>
+                            <div class="highlight-content-item">
+                                <i class="fa-solid fa-check"></i>
+                                <div class="item-text">Nhiều tiện ích khác: Sân golf, phòng spa, phòng tập thể hình, khu vui chơi trẻ em,...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-price">
+                        <div class="price-original"><a href="hotelBooking.html">1.785.000đ</a></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Footer-->
+    <Footer class="footer">
+        <div class="footer-container-1">
+            <div class="footer-1">
+            <div class="footer-left">
+                <div class="title-1">
+                    <img src="./images/footer1.svg" alt="">
+                </div>
+                <div class="title-2">Tập đoàn BPGroup</div>
+                <div class="title-3">
+                    <div class="title-3-name">Công ty Cổ Phần Công nghệ Du Lịch BestPrice</div>
+                    <div class="title-3-text">
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/Lp5KAXdmTcRAPX1Q9">57 Trần Quốc Toản, phường Trần Hưng Đạo, quận Hoàn Kiếm, Hà Nội. (024) 7307 2605</a></div>
+                        </div>
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/e52wgXkZHd2dBYew6">Số 32, đường 208, Cái Tắt, An Đồng, An Dương, Hải Phòng. (024) 7307 2605</a></div>
+                        </div>
+                        <div class="content">Giấy phép kinh doanh số: 0104679428. Ngày cấp: 26/05/2010. Nơi cấp: Sở KH & ĐT TP Hà Nội.</div>
+                    </div>
+                </div>
+                <div class="title-3 title3-cover">
+                    <div class="title-3-name">Công ty Cổ phần Du lịch BestPrice Việt Nam</div>
+                    <div class="title-3-text">
+                        <div class="content">
+                            <img src="./images/footer2.png" alt="">
+                            <div class="text"><a href="https://maps.app.goo.gl/QCDL48Z3Ag9EmZdg7">21 Bùi Thị Xuân, Phường Bến Thành, Quận 1, Hồ Chí Minh. (028) 7307 2605</a></div>
+                        </div>
+                        <div class="content">Giấy phép kinh doanh số: 0318483750. Ngày cấp: 29/05/2024 Nơi cấp: Sở KH & ĐT TP HCM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-right-1">
+                    <div class="footer-right-item"><a href="">Vé máy bay</a></div>
+                    <div class="footer-right-item"><a href="">Khách sạn</a></div>
+                    <div class="footer-right-item"><a href="">Tour du lịch</a></div>
+                    <div class="footer-right-item"><a href="">Vinpearl</a></div>
+                    <div class="footer-right-item"><a href="">Combo du lịch</a></div>
+                    <div class="footer-right-item"><a href="">Du thuyền Hạ Long</a></div>
+                    <div class="footer-right-item"><a href="">Vé vui chơi</a></div>
+                </div>
+                <div class="footer-right-2">
+                    <div class="footer-right-item"><a href="">Về chúng tôi</a></div>
+                    <div class="footer-right-item"><a href="">Liên hệ</a></div>
+                    <div class="footer-right-item"><a href="">Chính sách riêng tư</a></div>
+                    <div class="footer-right-item"><a href="">Điều khoản và điều kiện</a></div>
+                    <div class="footer-right-item"><a href="">Hình thức thanh toán</a></div>
+                    <div class="footer-right-item"><a href="">BestPrice với báo chí</a></div>
+                    <div class="footer-right-item"><a href="">Chứng nhận và giải thưởng</a></div>
+                    <div class="footer-right-item"><a href="">Cẩm nang du lịch</a></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-container-2">
+            <div class="footer-2">
+                <div class="footer-2-item footer-2-text">các thương hiệu cùng tập đoàn bpgroup :</div>
+                <div class="footer-2-item"><img src="./images/footer3.png" alt=""></div>
+                <div class="footer-2-item"><img src="./images/footer4.png" alt=""></div>
+                <div class="footer-2-item"><img src="./images/footer5.png" alt=""></div>
+                <div class="footer-2-item"><img src="./images/footer6.png" alt=""></div>
+            </div>
+        </div>
+        <div class="form-promotion">
+            <div class="content">
+            <div class="image"><img src="./images/footer7.png" alt=""></div>
+            <div class="text">
+                <div class="text-1">Cơ hội giảm giá tới <span>50%</span></div>
+                <div class="text-2">Hãy đăng ký ngay để nhận ưu đãi bí mật từ BestPrice nhé!</div>
+            </div>
+        </div>
+        </div>
+    </Footer>
+</body>
+    <script>
+        // seemore/hide filter
+        const toggleButton = document.getElementById('toggleSeemoreHide');
+        const form4 = document.querySelector('.form-4');
+
+        toggleButton.addEventListener('click', function() {
+        form4.classList.toggle('expanded');
+        if (form4.classList.contains('expanded')) {
+            toggleButton.textContent = '[-] Ẩn xem thêm';
+        } else {
+            toggleButton.textContent = '[+] Xem thêm';
+        }
+        });
+
+        //arrange active
+        const arrangeItem = document.querySelectorAll('.arrange-item');
+
+        arrangeItem.forEach(item => {
+            item.addEventListener('click', function() {   
+                arrangeItem.forEach(i => i.classList.remove('active'));  
+                this.classList.add('active');
+            });
+        });
+
+        //highlights
+        document.getElementById("highlights-title-1").addEventListener("click", function() {
+            document.getElementById("highlights-content-1").classList.toggle("shrink");
+        });
+        document.getElementById("highlights-title-2").addEventListener("click", function() {
+            document.getElementById("highlights-content-2").classList.toggle("shrink");
+        });
+        document.getElementById("rotateIcon").addEventListener('click', function() {
+            this.classList.toggle('rotate');
+        });
+    </script>
+    <script src="./js/app.js"></script>
+</html>
