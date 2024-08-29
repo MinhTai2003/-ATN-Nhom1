@@ -4431,10 +4431,404 @@ button.arrowRight-tour {
     font-size: 20px;
     color: #ed4903;
 }
+/*------------------------------------CSS AIRLINE TICKET DETAIL-----------------------------------------*/
 
 
+.ab-selectAgain{
+    width: 55em;
+    height: auto;
+    margin: 0 auto;
+}
+.select-again{
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
+.select-again > a{
+    text-decoration: none;
+    color: black;
+}
+.select-again > a > i{
+    margin-right: 10px;
+    float: left;
+}
+.select-again-text{
+    float: right;
+}
+.airTicket-box{
+    width: 100%;
+    height: auto;
+}
+.airTicket-box-Container{
+    width: 55em;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    background-color: #ededed;
+    padding: 20px;
+    border-radius: 10px;
+}
+.airTicket-box-left{
+    width: 60%;
+    height: auto;
+    border-right: 1px solid #999;
+}
+.abl-title, .abr-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #858585;
+    margin-bottom: 15px;
+}
+.abl-trip{
+    padding-bottom: 20px;
+    margin-right: 30px;
+    border-bottom: 1px solid #999;
+}
+.abl-return{
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.abl-trip-1, .abl-return-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.abl-trip-left-1, .abl-return-left-1{
+    display: flex;
+    align-items: center;
+    
+}
+.abl-trip-title, .abl-return-title{
+    font-weight: bold;
+    margin-right: 10px;
+    color: #504f4f;
+}
+.abl-trip-nameAir, .abl-return-nameAir{
+    display: flex;
+    align-items: center;
+}
+.abl-trip-nameAir > img, .abl-return-nameAir > img{
+    width: 40px;
+    margin-right: 10px;
+}
+.abl-trip-right-1 > a, .abl-return-right-1 > a{
+    text-decoration: none;
+    color: #000;
+    padding: 7px 10px;
+    background-color: #d4d0d0;
+    border-radius: 5px;
+    color: #474747;
+}
+.abl-trip-2, .abl-return-2{
+    display: flex;
+    align-items: center;
+}
+.abl-trip-left-2, .abl-trip-center-2,
+.abl-return-left-2, .abl-return-center-2{
+    margin-right: 20px;
+}
+.abl-trip-province, .abl-return-province{
+    margin-bottom: 15px;
+}
+.abl-trip-time{
+    letter-spacing: 0.3px;
+}
+.airTicket-box-right{
+    width: 40%;
+    margin-left: 25px;
+}
+.abr-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.abr-name{
+    font-weight: bold;
+    color: #504f4f;
+}
+.abr-price{
+    margin-right: 10px;
+}
+.abr-input > input{
+    display: block;
+    padding: 15px;
+    width: 80%;
+    margin-left: 55px;
+    border: none;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+.abr-total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.abr-totalTitle{
+    font-weight: bold;
+    color: #504f4f;
+}
+.abr-totalPrice{
+    font-size: 19px;
+    color: #cf4c00;
+    margin-left: 20px;
+}
 
+.inf-guest{
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+}
+.inf-guest-container{
+    width: 55em;
+    height: auto;
+    margin: 0 auto;
+   
+}
+.inf-guest-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.inf-guestItem{
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.guestItem-name{
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #494949;
+}
+.guestItem-name > span{
+    color: #c11111;
+}
+.guestItem-input >  input{
+    display: block;
+    margin-left: 20px;
+    padding: 12px 15px;
+    width: 40%;
+    outline: none;
+    transition: border-color 0.3s;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.guestItem-input >  input:focus{
+    border-color: #939393;
+    box-shadow: 0 0 5px rgba(224, 146, 50, 0.5);
+}
+.contact-info-air{
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+.contact-container-air{
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+/*------------------------------------CSS AIRLINE TICKET BOOKING-----------------------------------------*/
+
+.air-booking{
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+}
+.air-booking-container{
+    width: 55em;
+    height: auto;
+    margin: 0 auto;
+}
+.air-booking-title{
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ab-title-2 > i{
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.filter-navigation{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+.filter-navigation-left{
+    width: 28%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.fn-left-1{
+    font-weight: bold;
+    margin-right: 10px;
+}
+.fn-left-2 > select.select-box-1{
+    padding: 7px 4px ;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+.filter-navigation-right{
+    width: 70%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.fn-right-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fn-right-1-name{
+    font-weight: bold;
+    margin-right: 5px;
+}
+.fn-right-checkbox > input{
+    display: block;
+    
+}
+.fn-right-checkbox{
+    display: flex;
+    align-items: center;
+}
+.fn-right-checkbox > img{
+    width: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.fn-right-2 > select.select-box-2{
+    padding: 7px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+}
+.fn-right-3 > select.select-box-3{
+    padding: 7px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+.air-booking-item{
+    width: 55em;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, 
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.ab-item-content1, .ab-item-content2, .ab-item-content3{
+    display: flex;
+    align-items: center;
+}
+.ab-item-content1 > img{
+    width: 50px;
+    margin-right: 10px;
+}
+.ab-item-content2 .ab-time{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.ab-ticket-detail{
+    margin-right: 10px;
+}
+.ab-item-content3 > a{
+    text-decoration: none;
+    display: flex;
+    color: #000;
+}
+.ab-item-content3 > a > i{
+    font-weight: bold;
+}
+.ab-airprice{
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, 
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 10px 0;
+}
+.ab-airprice > a{
+    text-decoration: none;
+    color: rgb(211, 33, 33);
+    font-weight: bold;
+    padding: 10px 25px;
+}
+#air-booking-content-1{
+    width: 55em;
+    height: 0;
+    padding: 20px;
+    background-color: #f4f4f475;
+}
+#air-booking-content-1 .shrink{
+    height: auto;
+}
+.ab-content-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.ab-content-combo{
+    display: flex;
+}
+.ab-content-container{
+    width: 65%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.8;
+    border-bottom: 1px solid #999;
+    padding-bottom: 20px;
+}
+.ab-content-text-1 > span, .ab-content-text-3{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.ab-content-2{
+    margin-right: 40px;
+}
+.ab-content-3{
+    width: 30%;
+    margin-left: 50px;
+}
+.btn-air-booking{
+    width: auto;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, 
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 10px 0;
+    margin-top: 15px;
+    text-align: center;
+}
+.btn-air-booking > a{
+    text-decoration: none;
+    color: rgb(211, 33, 33);
+    font-weight: bold;
+    padding: 10px 25px;
+    
+}
 
 /*------------------------------------CSS LOGIN - DANG NHAP-----------------------------------------*/
 /*------------------------------------CSS SIGNIN - DANG KY-----------------------------------------*/
@@ -4554,12 +4948,16 @@ button.arrowRight-tour {
 .form-promotion .image > img{
     margin-right: 20px;
 }
-.form-promotion .text .text-1{
+.text-ft{
+    display: flex;
+    flex-direction: column;
+}
+.form-promotion .text-ft .text-1-ft{
     margin-bottom: 10px;
     font-size: 19px;
     font-weight: bold;
 }
-.form-promotion .text .text-1 > span{
+.form-promotion .text-ft .text-1-ft > span{
     font-size: 28px;
     color: #f36309;
 }

@@ -7,8 +7,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <title>Chi tiết đặt tour</title>
+    <title>Document</title>
 </head>
 <body>
     <!--Header-->
@@ -52,12 +51,12 @@
                 <div class="proceduce-number-1">
                     <i class="fa-solid fa-check"></i>
                 </div>
-                <div class="proceduce-title-1">Xem giá tour</div>
+                <div class="proceduce-title-1">Chọn vé</div>
             </div>
             <hr>
             <div class="proceduce-item">
                 <div class="proceduce-number-2">2</div>
-                <div class="proceduce-title-2">Chi tiết đặt tour</div>
+                <div class="proceduce-title-2">Thông tin hành khách</div>
             </div>
             <hr>
             <div class="proceduce-item">
@@ -66,121 +65,139 @@
             </div>
         </div>
     </div>
-    <!--book tour detail-->
-    <div class="tourDetail">
-        <div class="tourDetail-container">
-            <div class="tourDetail-title">Chi tiết đặt tour</div>
-            <div class="tourDetail-name">
-                HCM - Hà Nội - Sapa - Lào Cai - Ninh Bình - Hạ Long 5N4Đ (Tour bao gồm máy bay)
-            </div>
-            <div class="tourDetail-container-1">
-                <div class="info-tourDetail-item">
-                    <i class="fa-solid fa-map"></i>
-                    <div class="info-tourDetai-text">Lịch trình: Hồ Chí Minh - Hà Nội - Sapa - Lào Cai - Ninh Bình - Hạ Long</div>
-                </div>
-                <div class="info-tourDetail-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div class="info-tourDetail-text">
-                        Vietjet Air
+    <div class="ab-selectAgain">
+        <div class="select-again">
+            <a href=""><i class="fa-solid fa-arrow-left"></i>
+            <div class="select-again-text">Chọn lại chuyến bay</div>
+            </a></div>
+    </div>
+    <div class="airTicket-box">
+        <div class="airTicket-box-Container">
+            <div class="airTicket-box-left">
+                <div class="abl-title">Thông tin chuyến bay</div>
+                <div class="abl-trip">
+                    <div class="abl-trip-1">
+                        <div class="abl-trip-left-1">
+                            <div class="abl-trip-title">Chiều đi: </div>
+                            <div class="abl-trip-nameAir">
+                                <img src="./images/air-vietjet.png" alt="">
+                                <div class="nameAir">VietJet Air (VJ-125)</div>
+                            </div>
+                        </div>
+                        <div class="abl-trip-right-1"><a href="">Thay đổi</a></div>
                     </div>
-                </div>
-                <div class="info-tourDetail-other">
-                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
-                    <div class="info-tourDetail-text">
-                        Giảm 1TR + Free 20kg hành lý ký gửi
+                    <div class="abl-trip-2">
+                        <div class="abl-trip-left-2">
+                            <div class="abl-trip-province">Hà Nội (HAN)</div>
+                            <div class="abl-trip-time">28/08/2024</div>
+                        </div>
+                        <div class="abl-trip-center-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="abl-trip-right-2">
+                            <div class="abl-trip-province">Hồ Chí Minh (SGN)</div>
+                            <div class="abl-trip-time">29/08/2024</div>
+                        </div>
                     </div>
+
                 </div>
-            </div>
-            <div class="tourDetail-container-2">
-                <div class="tourDetail-container-above">
-                    <div class="tourDetail-above-1">1. Thông tin đoàn <span>(*)</span></div>
-                    <div class="tourDetail-above-2">
-                        <div class="dropdown tourDetail-dropdown" id="guestDropdown">
-                            <div class="guest-item tourDetail-items">
-                                <label>Người lớn</label>
-                                <div class="select-quantity">
-                                <button class="counter-btn" id="adultMinus"><i class="fa-solid fa-minus"></i></button>
-                                <span class="counter-value" id="adultCount">0</span>
-                                <button class="counter-btn" id="adultPlus"><i class="fa-solid fa-plus"></i></button>
+                <div class="abl-return">
+                    <div class="abl-return-1">
+                        <div class="abl-return-left-1">
+                            <div class="abl-return-title">Chiều về: </div>
+                            <div class="abl-return-nameAir">
+                                <img src="./images/air-vietravelairlines.png" alt="">
+                                <div class="nameAir">Vietravel Airlines (VU-718)</div>
                             </div>
-                            </div>
-                            <div class="guest-item tourDetail-items">
-                                <label>Trẻ em</label>
-                                <div class="select-quantity">
-                                <button class="counter-btn" id="childMinus"><i class="fa-solid fa-minus"></i></button>
-                                <span class="counter-value" id="childCount">0</span>
-                                <button class="counter-btn" id="childPlus"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                            </div>
-                            <div class="guest-item tourDetail-items">
-                                <label>Em bé</label>
-                                <div class="select-quantity">
-                                <button class="counter-btn" id="infantMinus"><i class="fa-solid fa-minus"></i></button>
-                                <span class="counter-value" id="infantCount">0</span>
-                                <button class="counter-btn" id="infantPlus"><i class="fa-solid fa-plus"></i></button>
-                            </div>
-                            </div>
+                        </div>
+                        <div class="abl-return-right-1"><a href="">Thay đổi</a></div>
+                    </div>
+                    <div class="abl-return-2">
+                        <div class="abl-return-left-2">
+                            <div class="abl-return-province">Hà Nội (HAN)</div>
+                            <div class="abl-return-time">28/08/2024</div>
+                        </div>
+                        <div class="abl-return-center-2"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="abl-return-right-2">
+                            <div class="abl-return-province">Hồ Chí Minh (SGN)</div>
+                            <div class="abl-return-time">29/08/2024</div>
                         </div>
                     </div>
                 </div>
-                <div class="tourDetail-container-center">
-                    <div class="tourDetail-center-1">2. Ngày khởi hành:</div>
-                    <div class="tourDetail-center-2">
-                        <i class="fa-regular fa-calendar"></i>
-                        <div id="selectDepartureDate">Chọn ngày</div>
-                    </div>
+            </div>
+            <div class="airTicket-box-right">
+                <div class="abr-title">Chi tiết thanh toán</div>
+                <div class="abr-item">
+                    <div class="abr-name"><span>1</span> Người lớn:</div>
+                    <div class="abr-price">3.309.000đ</div>
                 </div>
-                <div class="tourDetail-container-below">
-                    <div class="tourDetail-below-1">3. Khởi hành từ:</div>
-                    <div class="tourDetail-below-2">Hồ Chí Minh</div>
+                <div class="abr-item">
+                    <div class="abr-name"><span>1</span> Trẻ em (2-12):</div>
+                    <div class="abr-price">1.568.000đ</div>
+                </div>
+                <div class="abr-item">
+                    <div class="abr-name"><span>1</span> Em bé (< 2):</div>
+                    <div class="abr-price">500.000đ</div>
+                </div>
+                <div class="abr-input"><input type="text" name="text" placeholder="Nhập mã giảm giá (nếu có)"></div>
+                <div class="abr-total">
+                    <div class="abr-totalTitle">Tổng tiền: </div>
+                    <div class="abr-totalPrice">5.954.800đ</div>
                 </div>
             </div>
-            <div class="tourDetair-total">
-                <input type="text" name="text" class="code-promotion" placeholder="Mã giảm giá (nếu có): Nhập mã giảm giá">
-                <div class="tourDetail-promotion">
-                    <div class="tourDetail-promotion-text">Giảm giá:</div>
-                    <div class="tourDetail-promotion-price">- 1.000.000đ</div>
-                </div>
-                <div class="tourDetail-price">
-                    <div class="tourDetail-price-text">Tổng tiền:</div>
-                    <div class="tourDetail-price-original">21.680.000đ</div>
-                </div>
+        </div>
+    </div>
+    <!--INFORMATION GUEST-->
+    <div class="inf-guest">
+        <div class="inf-guest-container">
+            <div class="inf-guest-title">Thông tin hành khách</div>
+            <div class="inf-guestItem">
+                <div class="guestItem-name">Người lớn 1, Họ và tên <span>*</span></div>
+                <div class="guestItem-input"><input type="text" class="inf-guest-input1" placeholder="Ví dụ: Nguyen Van An"></div>
             </div>
-            <!--contact-info-->
-            <div class="contact-info">
-                <div class="contact-container">
-                    <div class="contact-title">Thông tin liên hệ</div>
-                    <div class="list-input">
-                    <div class="contact-left">
-                    <div class="input-name">
-                        <label for="fullname">Họ và Tên:</label>
-                        <input type="text" id="fullname" placeholder="Nhập họ và tên">
-                        <p id="name-error" class="error-message">Vui lòng nhập họ và tên.</p>
-                    </div>
-                    <div class="input-phone">
-                        <label for="phone">Số điện thoại:</label>
-                        <input type="text" id="phone" placeholder="Nhập số điện thoại">
-                        <p id="phone-error" class="error-message">Vui lòng nhập số điện thoại.</p>
-                        <p id="phone-format-error" class="error-message">Định dạng số điện thoại không đúng.</p>
-                    </div>
-                    <div class="input-email-contact">
-                        <label for="email">Email:</label>
-                        <input type="text" id="email" placeholder="Để gửi thông tin vé , lịch trình, thanh toán">
-                        <p id="email-error" class="error-message">Vui lòng nhập email.</p>
-                        <p id="email-format-error" class="error-message">Định dạng email không đúng.</p>
-                    </div>
-                    <button class="btn-request" onclick="validateForm()">Gửi yêu cầu đặt phòng</button>
-                </div>
-                <div class="contact-right">
-                    <div class="contact-right-title">Nội dung yêu cầu</div>
-                    <textarea name="content-request" id="content-request"></textarea>
-                </div>
-            </div>    
-                    <!-- Thông báo thanh trượt -->
-                    <div id="notification" class="notification">Successfully !</div>
-                
-                </div>
+            <div class="inf-guestItem">
+                <div class="guestItem-name">Trẻ em 2, Họ và tên <span>*</span></div>
+                <div class="guestItem-input"><input type="text" class="inf-guest-input2" placeholder="Ví dụ: Nguyen Van An"></div>
             </div>
+            <div class="inf-guestItem">
+                <div class="guestItem-name">Em bé 3, Họ và tên <span>*</span></div>
+                <div class="guestItem-input"><input type="text" class="inf-guest-input3" placeholder="Ví dụ: Nguyen Van An"></div>
+            </div>
+        </div>
+    </div>
+    <!--contact-info-->
+    <div class="contact-info-air">
+        <div class="contact-container-air">
+            <div class="contact-title">Thông tin liên hệ</div>
+            <div class="list-input">
+            <div class="contact-left">
+            <div class="input-name">
+                <label for="fullname">Họ và Tên:</label>
+                <input type="text" id="fullname" placeholder="Nhập họ và tên">
+                <p id="name-error" class="error-message">Vui lòng nhập họ và tên.</p>
+            </div>
+            <div class="input-phone">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                <p id="phone-error" class="error-message">Vui lòng nhập số điện thoại.</p>
+                <p id="phone-format-error" class="error-message">Định dạng số điện thoại không đúng.</p>
+            </div>
+            <div class="input-email-contact">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Để gửi thông tin vé , lịch trình, thanh toán">
+                <p id="email-error" class="error-message">Vui lòng nhập email.</p>
+                <p id="email-format-error" class="error-message">Định dạng email không đúng.</p>
+            </div>
+            <button class="btn-request" onclick="validateForm()">Tiếp tục</button>
+        </div>
+        <div class="contact-right">
+            <div class="contact-right-title">Nội dung yêu cầu</div>
+            <textarea name="content-request" id="content-request"></textarea>
+        </div>
+        
+        
+    </div>    
+            <!-- Thông báo thanh trượt -->
+            <div id="notification" class="notification">Successfully !</div>
+        
         </div>
     </div>
     <!--Footer-->
@@ -260,16 +277,4 @@
         </div>
     </Footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    // Khởi tạo flatpickr cho ngày đi
-let selectDepartureDate = flatpickr("#selectDepartureDate", {
-    dateFormat: "d/m/Y",
-    minDate: "today",
-    onChange: function(selectedDates, dateStr, instance) {
-        document.getElementById('selectDepartureDate').textContent = dateStr;
-    }
-})
-</script>
-<script src="./js/app.js"></script>
 </html>
