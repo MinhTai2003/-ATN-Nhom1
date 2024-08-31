@@ -7,6 +7,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Khách Sạn</title>
 </head>
 <body>
@@ -71,52 +72,156 @@
                 <div class="filter-name">Tìm khách sạn giá tốt</div>
             <div id="container2" class="container">
                 <div class="filter-content-2">
-                <div class="content-left">
-                    <div class="left-1">
-                        <div class="location">
-                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="text">
-                                <div class="text1">Địa điểm</div>
-                                <div class="text2">Thành phố, địa danh, khách sạn...</div>
+                    <div class="content-left">
+                        <div class="left-1">
+                            <div class="location-all">
+                                <div class="location-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="location-main-text">
+                                    <div class="location-main-text1">Địa điểm</div>
+                                    <div class="location-main-text2" id="locationText2">Thành phố, địa danh, khách sạn...</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="left-2">
+                            <div class="picker-container" id="departureDatePicker">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="picker-content">
+                                    <div class="picker-name">Ngày Đi</div> 
+                                    <span style="color: #000;" id="departureDateText">Chọn ngày</span></div>
+                            </div>
+                            
+                            <div class="picker-container" id="returnDatePicker">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="picker-content">
+                                    <div class="picker-name">Ngày Về</div>
+                                    <span style="color: #000;" id="returnDateText">Chọn ngày</span>
+                                </div>
+                            </div>
+                            <div class="picker-container" id="guestPickerContainer">
+                                <i class="fa-solid fa-user"></i>
+                                <div class="picker-content">
+                                    <div class="picker-name">Số Khách</div> 
+                                    <span style="color: #000; font-weight: bold; cursor: pointer;" id="guestCount">Chọn số người</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="left-2">
-                        <div class="departure-date">
-                            <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="text">
-                                <div class="text1">Nhận phòng</div>
-                                <div class="text2">Chọn ngày</div>
-                            </div>
-                        </div>
-                        <div class="arrival-date">
-                            <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="text">
-                                <div class="text1">Trả phòng</div>
-                                <div class="text2">Chọn ngày</div>
-                            </div>
-                        </div>
-                        <div class="passenger">
-                            <div class="icon"><i class="fa-solid fa-user"></i></div>
-                            <div class="text">
-                                <div class="text1">Hành khách</div>
-                                <div class="text2">Chọn số lượng</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="content-right">
                     <div class="find-hotels">
                        <div class="btn-findHotels"><a href="hotelItem.html">Tìm khách sạn</a></div>
                     </div>
                 </div>
             </div>
+            <!-- Dropdown hotel -main 1 -->
+            <div class="location-dropdown" id="locationDropdown2">
+                <div class="dropdown-title">Địa điểm nổi bật</div>
+                <div class="dropdown-section">
+                    <div class="dropdown-item" data-location="Sapa">
+                        <img src="./images/dropdown-sapa.png" alt="Sapa">
+                        <div class="dd-hotel-main">
+                        <span class="dd-name">Sapa</span>
+                        <div class="dd-hotel-text">77 khách sạn</div>
+                    </div>
+                    </div>
+                    <div class="dropdown-item" data-location="Đà Nẵng">
+                        <img src="./images/dropdown-danang.jpg" alt="Đà Nẵng">
+                        <div class="dd-hotel-main">
+                            <span class="dd-name">Đà Nẵng</span>
+                            <div class="dd-hotel-text">194 khách sạn</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item" data-location="Nha Trang">
+                        <img src="./images/dropdown-nhatrang.jpg" alt="Nha Trang">
+                        <div class="dd-hotel-main">
+                            <span class="dd-name">Nha Trang</span>
+                            <div class="dd-hotel-text">152 khách sạn</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item" data-location="Ninh Bình">
+                        <img src="./images/dropdown-ninhbinh.jpg" alt="Ninh Bình">
+                        <div class="dd-hotel-main">
+                            <span class="dd-name">Ninh Bình</span>
+                            <div class="dd-hotel-text">47 khách sạn</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item" data-location="Hạ Long">
+                        <img src="./images/dropdown-halong.jpg" alt="Hạ Long">
+                        <div class="dd-hotel-main">
+                            <span class="dd-name">Hạ Long</span>
+                            <div class="dd-hotel-text">94 khách sạn</div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item" data-location="Đà Lạt">
+                        <img src="./images/dropdown-dalat.jpg" alt="Đà Lạt">
+                        <div class="dd-hotel-main">
+                            <span class="dd-name">Đà Lạt</span>
+                            <div class="dd-hotel-text">83 khách sạn</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-title">Điểm đến ưa thích</div>
+                <div class="dropdown-section">
+                    <div class="dropdown-item dropdown-item-name" data-location="Quy Nhơn">Quy Nhơn</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Phú Quốc">Phú Quốc</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hà Giang">Hà Giang</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hà Nội">Hà Nội</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hội An">Hội An</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hồ Chí Minh">Hồ Chí Minh</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Cát Bà">Cát Bà</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Huế">Huế</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Mộc Châu">Mộc Châu</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Côn Đảo">Côn Đảo</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Quảng Bình">Quảng Bình</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Buôn Ma Thuột">Buôn Ma Thuột</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Phan Thiết">Phan Thiết</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Cần Thơ">Cần Thơ</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Vũng Tàu">Vũng Tàu</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hà Nam">Hà Nam</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Thanh Hóa">Thanh Hóa</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Phú Yên">Phú Yên</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Vĩnh Phúc">Vĩnh Phúc</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hòa Bình">Hòa Bình</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hà Tĩnh">Hà Tĩnh</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Quảng Ninh">Quảng Ninh</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Hải Phòng">Hải Phòng</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Ninh Thuận">Ninh Thuận</div>
+                    <div class="dropdown-item dropdown-item-name" data-location="Cửa Hội">Cửa Hội</div>
+                </div>
+            </div>
+            <!-- Dropdowns - hotel -main 2-->
+            <div class="dropdown guest-dropdown" id="guestDropdown" style="position: absolute; top: 92%; left: 50%;">
+                <div class="guest-item">
+                    <label>Người lớn</label>
+                    <div class="select-quantity">
+                    <button class="counter-btn" id="adultMinus"><i class="fa-solid fa-minus"></i></button>
+                    <span class="counter-value" id="adultCount">0</span>
+                    <button class="counter-btn" id="adultPlus"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                </div>
+                <div class="guest-item">
+                    <label>Trẻ em</label>
+                    <div class="select-quantity">
+                    <button class="counter-btn" id="childMinus"><i class="fa-solid fa-minus"></i></button>
+                    <span class="counter-value" id="childCount">0</span>
+                    <button class="counter-btn" id="childPlus"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                </div>
+                <div class="guest-item">
+                    <label>Em bé</label>
+                    <div class="select-quantity">
+                    <button class="counter-btn" id="infantMinus"><i class="fa-solid fa-minus"></i></button>
+                    <span class="counter-value" id="infantCount">0</span>
+                    <button class="counter-btn" id="infantPlus"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                </div>
+            </div>
             </div>
             </div>
         </div>
         <!--Brand-->
-        <div class="brand">
-            <div class="list-brand">
+        <div class="brand-hotels">
+            <div class="list-brands">
                 <div class="journey">
                     <img class="journey-img" src="./images/14-nam.png" alt="">
                     <div class="journey-text">
@@ -386,29 +491,6 @@
         </div>
     </Footer>
 </body>
-    <script>
-        const imageWrapper = document.querySelector('.image-wrapper-hotel');
-        const leftIcon = document.querySelector('.left-icon-et');
-        const rightIcon = document.querySelector('.right-icon-et');
-
-        let currentIndex = 0;
-        const cardWidth = document.querySelector('.image-card-et').offsetWidth + 
-                        parseInt(window.getComputedStyle(document.querySelector('.image-card-et')).marginLeft) + 
-                        parseInt(window.getComputedStyle(document.querySelector('.image-card-et')).marginRight);
-
-        rightIcon.addEventListener('click', () => {
-        if (currentIndex < 3) { // Chỉ cho phép dịch chuyển tối đa 3 lần (7 - 4)
-            currentIndex++;
-            imageWrapper.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-        }
-        });
-
-        leftIcon.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            imageWrapper.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
-        }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="./js/app.js"></script>
 </html>

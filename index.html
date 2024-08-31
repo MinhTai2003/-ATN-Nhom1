@@ -7,6 +7,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Trang Chủ</title>
 </head>
 <body>
@@ -40,8 +41,8 @@
             </ul>
         </div>
         <div class="btn-login-signin">
-            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
-            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+            <div class="btn-log btn-logIn"><a href="login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="register.html">Đăng ký</a></div>
         </div>
     </header>
     <div class="wrapper">
@@ -79,7 +80,7 @@
                         <div class="filter-content-1">
                         <div class="content-left-index">
                             <div class="content-left-1">
-                                <div class="departure-point">
+                                <div class="departure-point" onclick="toggleSelector('departureSelector')">
                                     <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
                                     <div class="text">
                                         <div class="text1">Điểm đi</div>
@@ -87,34 +88,313 @@
                                     </div>
                                 </div>
                                 <div class="swap" id="swap"><i class="fa-solid fa-right-left"></i></div>
-                                <div class="arrival-point">
+                                <div class="arrival-point" onclick="toggleSelector('arrivalSelector')">
                                     <div class="icon"><i class="fa-solid fa-plane-arrival"></i></div>
                                     <div class="text">
                                         <div class="text1">Điểm đến</div>
                                         <div class="text2" id="swaptext2">Chọn địa điểm</div>
                                     </div>
                                 </div>
+                                <!-- Bảng chọn địa điểm cho điểm đi -->
+                        <div class="location-selector" id="departureSelector">
+                            <div class="location-selector-title">Chọn điểm đi</div>
+                            <div class="location-selector-content">
+                            <div class="location-categories">
+                                <div class="location-category" onclick="showOptions('departure', 'vietnam')">Việt Nam</div>
+                                <div class="location-category" onclick="showOptions('departure', 'asean')">Đông Nam Á</div>
+                                <div class="location-category" onclick="showOptions('departure', 'asia')">Châu Á</div>
+                                <div class="location-category" onclick="showOptions('departure', 'europe')">Châu Âu</div>
+                                <div class="location-category" onclick="showOptions('departure', 'oceania')">Châu Úc</div>
+                                <div class="location-category" onclick="showOptions('departure', 'americas')">Châu Mỹ</div>
                             </div>
+                            <div class="location-options" id="departure-vietnam">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hà Nội (HAN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hồ Chí Minh (SGN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đà Nẵng (DAD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nha Trang (CXR)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phú Quốc (PQC)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Huế (HUI)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hải Phòng (HPH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Cần Thơ (VCA)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Côn Đảo (VCS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Thanh Hóa (THD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đà Lạt (DLI)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Quy Nhơn (UIH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Cà Mau (CAH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chu Lai (VCL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Buôn Ma Thuột (BMV)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Điện Biên (DIN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đồng Hới (VDH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tuy Hòa (TBB)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Pleiku (PXU)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Rạch Giá (VKG)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vinh (VII)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vân Đồn (VDO)</div>
+                            </div>
+                            <div class="location-options" id="departure-asean">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bali (DPS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bangkok (BKK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chiang Mai (CNX)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chiang Rai (CEI)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Jarkarta (CGK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kuala Lumpur (KUL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Luang Prabang (LPQ)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Manila (MNL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phnom Penh (PNH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phuket (HKT)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Siem Reap (SAI)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Sihanoukville (KOS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Singapore (SIN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vientiane (VTE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Yangon (RGN)</div>
+                            </div>
+                            <div class="location-options" id="departure-asia">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Ahmedabad (AMD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bắc Kinh (PEK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bangalore (BLR)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Busan (PUS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chengdu (CTU)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Daegu (TAE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Dubai (DXB)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Fukuoka (FUK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Guangzhou (CAN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hàng Châu (HGH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hồng Kông (HKG)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hyderabad (HYD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kaohsiung (KHH)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kochi (COK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Mumbai (BOM)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nagoya (NGO)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">New Delhi (DEL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Osaka (KIX)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Seoul (ICN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Shanghai (PVG)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Taipei (TPE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tokyo Haneda (HND)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tokyo Narita (NRT)</div>
+                            </div>
+                            <div class="location-options" id="departure-europe">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Amsterdam (AMS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Barcelona (BCN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Frankfurt (FRA)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Geneva (GVA)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">London (LHR)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Lyon (LYS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Madrid (MAD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Marseille (MRS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Montpellier (MPL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Moscow (SVO)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nice (NCE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Paris (CDG)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Prague (PRG)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Rome (ROM)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Toulouse (TLS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vienna (VIE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Zurich (ZRH)</div>
+                            </div>
+                            <div class="location-options" id="departure-oceania">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Adelaide (ADL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Brisbane (BNE)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Meibourne (MEL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Perth (PER)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Sydney (SYD)</div>
+                            </div>
+                            <div class="location-options" id="departure-americas">
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Atlanta Hartsfield (ATL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Austin (AUS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Boston, Logan (BOS)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chicago IL (CHI)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Dallas Fort Worth (DFW)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Denver (DEN)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Los Angeles (LAX)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Miami (MIA)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Minneapolis/St.Paul (MSP)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">New York (JFK)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">PortLand (PXD)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">San Francisco (SFO)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Seattle, Tacoma (SEA)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">St Louis, Lambert (STL)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vancouver (YVR)</div>
+                                <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Washington (WAS)</div>
+                            </div>
+                            <!-- Thêm các nhóm tùy chọn cho các khu vực khác -->
+                        </div>
+                        </div>
+                    
+                        <!-- Bảng chọn địa điểm cho điểm đến -->
+                        <div class="location-selector" id="arrivalSelector">
+                            <div class="location-selector-title">Chọn điểm đi</div>
+                            <div class="location-selector-content">
+                            <div class="location-categories">
+                                <div class="location-category" onclick="showOptions('arrival', 'vietnam')">Việt Nam</div>
+                                <div class="location-category" onclick="showOptions('arrival', 'asean')">Đông Nam Á</div>
+                                <div class="location-category" onclick="showOptions('arrival', 'asia')">Châu Á</div>
+                                <div class="location-category" onclick="showOptions('arrival', 'europe')">Châu Âu</div>
+                                <div class="location-category" onclick="showOptions('arrival', 'oceania')">Châu Úc</div>
+                                <div class="location-category" onclick="showOptions('arrival', 'americas')">Châu Mỹ</div>
+                            </div>
+                            <div class="location-options" id="arrival-vietnam">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hà Nội (HAN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hồ Chí Minh (SGN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đà Nẵng (DAD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nha Trang (CXR)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phú Quốc (PQC)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Huế (HUI)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hải Phòng (HPH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Cần Thơ (VCA)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Côn Đảo (VCS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Thanh Hóa (THD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đà Lạt (DLI)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Quy Nhơn (UIH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Cà Mau (CAH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chu Lai (VCL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Buôn Ma Thuột (BMV)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Điện Biên (DIN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đồng Hới (VDH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tuy Hòa (TBB)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Pleiku (PXU)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Rạch Giá (VKG)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vinh (VII)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vân Đồn (VDO)</div>
+                            </div>
+                            <div class="location-options" id="arrival-asean">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bali (DPS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bangkok (BKK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chiang Mai (CNX)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chiang Rai (CEI)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Jarkarta (CGK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kuala Lumpur (KUL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Luang Prabang (LPQ)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Manila (MNL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phnom Penh (PNH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phuket (HKT)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Siem Reap (SAI)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Sihanoukville (KOS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Singapore (SIN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vientiane (VTE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Yangon (RGN)</div>
+                            </div>
+                            <div class="location-options" id="arrival-asia">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Ahmedabad (AMD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bắc Kinh (PEK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bangalore (BLR)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Busan (PUS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chengdu (CTU)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Daegu (TAE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Dubai (DXB)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Fukuoka (FUK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Guangzhou (CAN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hàng Châu (HGH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hồng Kông (HKG)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hyderabad (HYD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kaohsiung (KHH)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kochi (COK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Mumbai (BOM)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nagoya (NGO)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">New Delhi (DEL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Osaka (KIX)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Seoul (ICN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Shanghai (PVG)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Taipei (TPE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tokyo Haneda (HND)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tokyo Narita (NRT)</div>
+                            </div>
+                            <div class="location-options" id="arrival-europe">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Amsterdam (AMS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Barcelona (BCN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Frankfurt (FRA)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Geneva (GVA)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">London (LHR)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Lyon (LYS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Madrid (MAD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Marseille (MRS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Montpellier (MPL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Moscow (SVO)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nice (NCE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Paris (CDG)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Prague (PRG)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Rome (ROM)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Toulouse (TLS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vienna (VIE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Zurich (ZRH)</div>
+                            </div>
+                            <div class="location-options" id="arrival-oceania">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Adelaide (ADL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Brisbane (BNE)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Meibourne (MEL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Perth (PER)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Sydney (SYD)</div>
+                            </div>
+                            <div class="location-options" id="arrival-americas">
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Atlanta Hartsfield (ATL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Austin (AUS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Boston, Logan (BOS)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chicago IL (CHI)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Dallas Fort Worth (DFW)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Denver (DEN)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Los Angeles (LAX)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Miami (MIA)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Minneapolis/St.Paul (MSP)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">New York (JFK)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">PortLand (PXD)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">San Francisco (SFO)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Seattle, Tacoma (SEA)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">St Louis, Lambert (STL)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vancouver (YVR)</div>
+                                <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Washington (WAS)</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                             <div class="content-left-2">
-                                <div class="departure-date">
-                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Ngày đi</div>
-                                        <div class="text2">Chọn ngày đi</div>
+                                <div class="picker-container" id="departureDatePicker">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Ngày Đi</div> 
+                                        <span style="color: #000;" id="departureDateText">Chọn ngày</span></div>
+                                </div>
+                                
+                                <div class="picker-container" id="returnDatePicker">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Ngày Về</div>
+                                        <span style="color: #000;" id="returnDateText">Chọn ngày</span>
                                     </div>
                                 </div>
-                                <div class="arrival-date">
-                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Ngày về</div>
-                                        <div class="text2">Chọn ngày về</div>
+                                
+                                <div class="picker-container" id="guestPickerContainer">
+                                    <i class="fa-solid fa-user"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Số Khách</div> 
+                                        <span style="color: #000;" id="guestCount">Chọn số người</span>
                                     </div>
                                 </div>
-                                <div class="passenger">
-                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Hành khách</div>
-                                        <div class="text2">Chọn số lượng</div>
+                                <!-- Dropdowns -->
+                                <div class="dropdown guest-dropdown" 
+                                style="width: 230px; position: absolute; top: 90%; left: 70%;" id="guestDropdown">
+                                    <div class="guest-item">
+                                        <label>Người lớn</label>
+                                        <div class="select-quantity">
+                                        <button class="counter-btn" id="adultMinus"><i class="fa-solid fa-minus"></i></button>
+                                        <span class="counter-value" id="adultCount">0</span>
+                                        <button class="counter-btn" id="adultPlus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                    </div>
+                                    <div class="guest-item">
+                                        <label>Trẻ em</label>
+                                        <div class="select-quantity">
+                                        <button class="counter-btn" id="childMinus"><i class="fa-solid fa-minus"></i></button>
+                                        <span class="counter-value" id="childCount">0</span>
+                                        <button class="counter-btn" id="childPlus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                    </div>
+                                    <div class="guest-item">
+                                        <label>Em bé</label>
+                                        <div class="select-quantity">
+                                        <button class="counter-btn" id="infantMinus"><i class="fa-solid fa-minus"></i></button>
+                                        <span class="counter-value" id="infantCount">0</span>
+                                        <button class="counter-btn" id="infantPlus"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -137,42 +417,146 @@
                         <div class="filter-content-2">
                         <div class="content-left">
                             <div class="left-1">
-                                <div class="location">
-                                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Địa điểm</div>
-                                        <div class="text2">Thành phố, địa danh, khách sạn...</div>
+                                <div class="location-all">
+                                    <div class="location-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="location-main-text">
+                                        <div class="location-main-text1">Địa điểm</div>
+                                        <div class="location-main-text2" id="locationText">Thành phố, địa danh, khách sạn...</div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="left-2">
-                                <div class="departure-date">
-                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Nhận phòng</div>
-                                        <div class="text2">Chọn ngày</div>
+                                <div class="picker-container" id="departureDatePicker2">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Ngày Đi</div> 
+                                        <span style="color: #000;" id="departureDateText2">Chọn ngày</span></div>
+                                </div>
+                                
+                                <div class="picker-container" id="returnDatePicker2">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Ngày Về</div>
+                                        <span style="color: #000;" id="returnDateText2">Chọn ngày</span>
                                     </div>
                                 </div>
-                                <div class="arrival-date">
-                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Trả phòng</div>
-                                        <div class="text2">Chọn ngày</div>
-                                    </div>
-                                </div>
-                                <div class="passenger">
-                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
-                                    <div class="text">
-                                        <div class="text1">Hành khách</div>
-                                        <div class="text2">Chọn số lượng</div>
+                                <div class="picker-container" id="guestPickerContainer2">
+                                    <i class="fa-solid fa-user"></i>
+                                    <div class="picker-content">
+                                        <div class="picker-name">Số Khách</div> 
+                                        <span style="color: #000; font-weight: bold; cursor: pointer;" id="guestCount2">Chọn số người</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="content-right">
                             <div class="find-hotel-index">
-                               <div class="btn-findHotel"><a href="#">Tìm khách sạn</a></div>
+                               <div class="btn-findHotel"><a href="hotelItem.html">Tìm khách sạn</a></div>
                             </div>
+                        </div>
+                    </div>
+                    <!-- Dropdown hotel -main 1 -->
+                    <div class="location-dropdown" id="locationDropdown">
+                        <div class="dropdown-title">Địa điểm nổi bật</div>
+                        <div class="dropdown-section">
+                            <div class="dropdown-item" data-location="Sapa">
+                                <img src="./images/dropdown-sapa.png" alt="Sapa">
+                                <div class="dd-hotel-main">
+                                <span class="dd-name">Sapa</span>
+                                <div class="dd-hotel-text">77 khách sạn</div>
+                            </div>
+                            </div>
+                            <div class="dropdown-item" data-location="Đà Nẵng">
+                                <img src="./images/dropdown-danang.jpg" alt="Đà Nẵng">
+                                <div class="dd-hotel-main">
+                                    <span class="dd-name">Đà Nẵng</span>
+                                    <div class="dd-hotel-text">194 khách sạn</div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-location="Nha Trang">
+                                <img src="./images/dropdown-nhatrang.jpg" alt="Nha Trang">
+                                <div class="dd-hotel-main">
+                                    <span class="dd-name">Nha Trang</span>
+                                    <div class="dd-hotel-text">152 khách sạn</div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-location="Ninh Bình">
+                                <img src="./images/dropdown-ninhbinh.jpg" alt="Ninh Bình">
+                                <div class="dd-hotel-main">
+                                    <span class="dd-name">Ninh Bình</span>
+                                    <div class="dd-hotel-text">47 khách sạn</div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-location="Hạ Long">
+                                <img src="./images/dropdown-halong.jpg" alt="Hạ Long">
+                                <div class="dd-hotel-main">
+                                    <span class="dd-name">Hạ Long</span>
+                                    <div class="dd-hotel-text">94 khách sạn</div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-location="Đà Lạt">
+                                <img src="./images/dropdown-dalat.jpg" alt="Đà Lạt">
+                                <div class="dd-hotel-main">
+                                    <span class="dd-name">Đà Lạt</span>
+                                    <div class="dd-hotel-text">83 khách sạn</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-title">Điểm đến ưa thích</div>
+                        <div class="dropdown-section">
+                            <div class="dropdown-item dropdown-item-name" data-location="Quy Nhơn">Quy Nhơn</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Phú Quốc">Phú Quốc</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hà Giang">Hà Giang</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hà Nội">Hà Nội</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hội An">Hội An</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hồ Chí Minh">Hồ Chí Minh</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Cát Bà">Cát Bà</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Huế">Huế</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Mộc Châu">Mộc Châu</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Côn Đảo">Côn Đảo</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Quảng Bình">Quảng Bình</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Buôn Ma Thuột">Buôn Ma Thuột</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Phan Thiết">Phan Thiết</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Cần Thơ">Cần Thơ</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Vũng Tàu">Vũng Tàu</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hà Nam">Hà Nam</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Thanh Hóa">Thanh Hóa</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Phú Yên">Phú Yên</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Vĩnh Phúc">Vĩnh Phúc</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hòa Bình">Hòa Bình</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hà Tĩnh">Hà Tĩnh</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Quảng Ninh">Quảng Ninh</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Hải Phòng">Hải Phòng</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Ninh Thuận">Ninh Thuận</div>
+                            <div class="dropdown-item dropdown-item-name" data-location="Cửa Hội">Cửa Hội</div>
+                        </div>
+                    </div>
+                    <!-- Dropdowns - hotel -main 2-->
+                    <div class="dropdown guest-dropdown" id="guestDropdown2" style="z-index: 20; position: absolute; top: 80%; left: 50%;">
+                        <div class="guest-item">
+                            <label>Người lớn</label>
+                            <div class="select-quantity">
+                            <button class="counter-btn" id="adultMinus2"><i class="fa-solid fa-minus"></i></button>
+                            <span class="counter-value" id="adultCount2">0</span>
+                            <button class="counter-btn" id="adultPlus2"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        </div>
+                        <div class="guest-item">
+                            <label>Trẻ em</label>
+                            <div class="select-quantity">
+                            <button class="counter-btn" id="childMinus2"><i class="fa-solid fa-minus"></i></button>
+                            <span class="counter-value" id="childCount2">0</span>
+                            <button class="counter-btn" id="childPlus2"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        </div>
+                        <div class="guest-item">
+                            <label>Em bé</label>
+                            <div class="select-quantity">
+                            <button class="counter-btn" id="infantMinus2"><i class="fa-solid fa-minus"></i></button>
+                            <span class="counter-value" id="infantCount2">0</span>
+                            <button class="counter-btn" id="infantPlus2"><i class="fa-solid fa-plus"></i></button>
+                        </div>
                         </div>
                     </div>
                     </div>
@@ -180,22 +564,207 @@
                         <div class="filter-content-3">
                             <div class="place">
                                 <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="text">
-                                    <div class="text1">Địa điểm</div>
-                                    <div class="text2">Bạn muốn đi đâu</div>
+                                <div class="place-text">
+                                    <div class="place-text1">Địa điểm</div>
+                                    <div class="place-text2" id="place-text2">Bạn muốn đi đâu?</div>
                                 </div>
                             </div>
+                            
                             <div class="departure-location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="text">
-                                    <div class="text1">Khởi hành từ</div>
-                                    <div class="text2">Vui lòng chọn</div>
+                                <div class="dl-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="dl-text">
+                                    <div class="dl-text1">Khởi hành từ</div>
+                                    <div class="dl-text2" id="dl-text2">Vui lòng chọn</div>
                                 </div>
                             </div>
                             <div class="findNow">
                                 <div class="btn-findNow"><a href="#">Tìm ngay</a></div>
                              </div>
                         </div>
+                        <div class="dropdown-please" id="dropdownPlease">
+                            <ul>
+                                <li data-value="Hồ Chí Minh">Hồ Chí Minh</li>
+                                <li data-value="Hà Nội">Hà Nội</li>
+                                <li data-value="Đà Nẵng">Đà Nẵng</li>
+                                <li data-value="Nha Trang">Nha Trang</li>
+                                <li data-value="Phú Quốc">Phú Quốc</li>
+                                <li data-value="Huế">Huế</li>
+                                <li data-value="Cần Thơ">Cần Thơ</li>
+                                <li data-value="Đà Lạt">Đà Lạt</li>
+                                <li data-value="Quy Nhơn">Quy Nhơn</li>
+                                <li data-value="Hạ Long">Hạ Long</li>
+                                <li data-value="Tây Nguyên">Tây Nguyên</li>
+                                <li data-value="Gói cơ bản">Gói cơ bản</li>
+                                <li data-value="Gói tiêu chuẩn">Gói tiêu chuẩn</li>
+                                <li data-value="Gói cao cấp">Gói cao cấp</li>
+                            </ul>
+                        </div>
+                        <!-- Dropdown -->
+                        <div class="dropdown-container" id="dropdownContainer">
+                            
+                            <div class="tour-dropdown">
+                                <div class="dropdown-title">Địa điểm nổi bật</div>
+                                <div class="dropdown-section dropdown-section-1">
+                                    
+                                    <div class="dropdowns-item d-item" data-location="Thái Lan">
+                                        <img src="./images/dropdown-thailan.jpg" alt="Thái Lan">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Thái Lan</span>
+                                            <div class="dd-hotel-text">23 khách sạn</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdowns-item d-item" data-location="Nhật Bản">
+                                        <img src="./images/dropdown-nhatban.jpg" alt="Nhật Bản">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Nhật Bản</span>
+                                            <div class="dd-hotel-text">18 khách sạn</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdowns-item d-item" data-location="Hàn Quốc">
+                                        <img src="./images/dropdown-hanquoc.jpg" alt="Hàn Quốc">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Hàn Quốc</span>
+                                            <div class="dd-hotel-text">18 khách sạn</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdowns-item d-item" data-location="Sapa">
+                                        <img src="./images/dropdown-sapa.png" alt="Sapa">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Sapa</span>
+                                            <div class="dd-hotel-text">18 khách sạn</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdowns-item d-item" data-location="Đà Nẵng">
+                                        <img src="./images/dropdown-danang.jpg" alt="Đà Nẵng">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Đà Nẵng</span>
+                                            <div class="dd-hotel-text">25 khách sạn</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdowns-item d-item" data-location="Nha Trang">
+                                        <img src="./images/dropdown-nhatrang.jpg" alt="Nha Trang">
+                                        <div class="dd-hotel-main">
+                                            <span class="dd-name">Nha Trang</span>
+                                            <div class="dd-hotel-text">33 khách sạn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="travel-all">
+                            <!--Du lịch trong nước và nước ngoài -->
+                            <div class="dropdown-section-2">
+                                <div class="dropdown-items toggle-section" onclick="toggleSubMenu('domestic')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-international"></i>Du lịch trong nước</div>
+                                <div class="sub-options" id="domestic">
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('north')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-north"></i> Miền Bắc
+                                    </div>
+                                    <div class="sub-options-inner" id="north">
+                                        <div class="dropdowns-item" data-location="Sapa">Sapa</div>
+                                        <div class="dropdowns-item" data-location="Ninh Bình">Ninh Bình</div>
+                                        <div class="dropdowns-item" data-location="Hạ Long">Hạ Long</div>
+                                        <div class="dropdowns-item" data-location="Đông Tây Bắc">Đông Tây Bắc</div>
+                                        <div class="dropdowns-item" data-location="Hà Giang">Hà Giang</div>
+                                        <div class="dropdowns-item" data-location="Hà Nội">Hà Nội</div>
+                                        <div class="dropdowns-item" data-location="Cát Bà">Cát Bà</div>
+                                        <div class="dropdowns-item" data-location="Mộc Châu">Mộc Châu</div>
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('central')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-central"></i> Miền Trung
+                                    </div>
+                                    <div class="sub-options-inner" id="central">
+                                        <div class="dropdowns-item" data-location="Đà Nẵng">Đà Nẵng</div>
+                                        <div class="dropdowns-item" data-location="Nha Trang">Nha Trang</div>
+                                        <div class="dropdowns-item" data-location="Đà Lạt">Đà Lạt</div>
+                                        <div class="dropdowns-item" data-location="Quy Nhơn">Quy Nhơn</div>
+                                        <div class="dropdowns-item" data-location="Hội An">Hội An</div>
+                                        <div class="dropdowns-item" data-location="Huế">Huế</div>
+                                        <div class="dropdowns-item" data-location="Quảng Bình">Quảng Bình</div>
+                                        <div class="dropdowns-item" data-location="Tây Nguyên">Tây Nguyên</div>
+                                      
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('south')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-south"></i> Miền Nam
+                                    </div>
+                                    <div class="sub-options-inner" id="south">
+                                        <div class="dropdowns-item" data-location="Phú Quốc">Phú Quốc</div>
+                                        <div class="dropdowns-item" data-location="Miền Tây">Miền Tây</div>
+                                        <div class="dropdowns-item" data-location="TP. Hồ Chí Minh">TP. Hồ Chí Minh</div>
+                                        <div class="dropdowns-item" data-location="Côn Đảo">Côn Đảo</div>
+                                        <div class="dropdowns-item" data-location="Phan Thiết">Phan Thiết</div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="dropdown-section">
+                                <div class="dropdown-items toggle-section" onclick="toggleSubMenu('international')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-international"></i> Du lịch nước ngoài
+                                </div>
+                                <div class="sub-options" id="international">
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('southeast-asia')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-southeast-asia"></i> Đông Nam Á
+                                    </div>
+                                    <div class="sub-options-inner" id="southeast-asia">
+                                        <div class="dropdowns-item" data-location="Thái Lan">Thái Lan</div>
+                                        <div class="dropdowns-item" data-location="Singapore">Singapore</div>
+                                        <div class="dropdowns-item" data-location="Bali">Bali</div>
+                                        <div class="dropdowns-item" data-location="Phuket">Phuket</div>
+                                        <div class="dropdowns-item" data-location="Singapore-Malaysia">Singapore - Malaysia</div>
+                                        <div class="dropdowns-item" data-location="Indonesia">Indonesia</div>
+                                        <div class="dropdowns-item" data-location="Malaysia">Malaysia</div>
+                                        <div class="dropdowns-item" data-location="Myanmar">Myanmar</div>
+                                        <div class="dropdowns-item" data-location="Campuchia">Campuchia</div>
+                                        <div class="dropdowns-item" data-location="Philippines">Philippines</div>
+                                        <div class="dropdowns-item" data-location="Lào">Lào</div>
+                                        <!-- Các item khác -->
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('asia')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-asia"></i> Châu Á
+                                    </div>
+                                    <div class="sub-options-inner" id="asia">
+                                        <div class="dropdowns-item" data-location="Nhật Bản">Nhật Bản</div>
+                                        <div class="dropdowns-item" data-location="Hàn Quốc">Hàn Quốc</div>
+                                        <div class="dropdowns-item" data-location="Trung Quốc">Trung Quốc</div>
+                                        <div class="dropdowns-item" data-location="Đài Loan">Đài Loan</div>
+                                        <div class="dropdowns-item" data-location="Dubai">Dubai</div>
+                                        <div class="dropdowns-item" data-location="Hồng Kông">Hồng Kông</div>
+                                        <div class="dropdowns-item" data-location="Ấn Độ">Ấn Độ</div>
+                                        <div class="dropdowns-item" data-location="Bắc Kinh">Bắc Kinh</div>
+                                        <!-- Các item khác -->
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('europe')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-europe"></i> Châu Âu
+                                    </div>
+                                    <div class="sub-options-inner" id="europe">
+                                        <div class="dropdowns-item" data-location="Pháp">Pháp</div>
+                                        <div class="dropdowns-item" data-location="Đức">Đức</div>
+                                        <div class="dropdowns-item" data-location="Thụy Sĩ">Thụy Sĩ</div>
+                                        <div class="dropdowns-item" data-location="Ý">Ý</div>
+                                        <div class="dropdowns-item" data-location="Hà Lan">Hà Lan</div>
+                                        <div class="dropdowns-item" data-location="Anh">Anh</div>
+                                        <div class="dropdowns-item" data-location="Nga">Nga</div>
+                                        <!-- Các item khác -->
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('australia')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-australia"></i> Châu Úc
+                                    </div>
+                                    <div class="sub-options-inner" id="australia">
+                                        <div class="dropdown-items" data-location="Úc">Úc</div>
+                                       
+                                        <!-- Các item khác -->
+                                    </div>
+                                    <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('america')">
+                                        <i class="fa fa-chevron-right arrow-icon" id="arrow-america"></i> Châu Mỹ
+                                    </div>
+                                    <div class="sub-options-inner" id="america">
+                                        <div class="dropdowns-item" data-location="Mỹ">Mỹ</div>
+                                        <div class="dropdowns-item" data-location="Canada">Canada</div>
+                                        <!-- Các item khác -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -512,5 +1081,7 @@
         </div>
     </Footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <script src="js/app.js"></script>
 </html>

@@ -425,40 +425,5 @@
         </div>
     </Footer>
 </body>
-    <script>
-        // seemore/hide filter
-        const toggleButton = document.getElementById('toggleSeemoreHide');
-        const form4 = document.querySelector('.form-4');
-
-        toggleButton.addEventListener('click', function() {
-        form4.classList.toggle('expanded');
-        if (form4.classList.contains('expanded')) {
-            toggleButton.textContent = '[-] Ẩn xem thêm';
-        } else {
-            toggleButton.textContent = '[+] Xem thêm';
-        }
-        });
-
-        //arrange active
-        const arrangeItem = document.querySelectorAll('.arrange-item');
-
-        arrangeItem.forEach(item => {
-            item.addEventListener('click', function() {   
-                arrangeItem.forEach(i => i.classList.remove('active'));  
-                this.classList.add('active');
-            });
-        });
-
-        //highlights
-        document.getElementById("highlights-title-1").addEventListener("click", function() {
-            document.getElementById("highlights-content-1").classList.toggle("shrink");
-        });
-        document.getElementById("highlights-title-2").addEventListener("click", function() {
-            document.getElementById("highlights-content-2").classList.toggle("shrink");
-        });
-        document.getElementById("rotateIcon").addEventListener('click', function() {
-            this.classList.toggle('rotate');
-        });
-    </script>
     <script src="./js/app.js"></script>
 </html>

@@ -40,8 +40,8 @@
             </ul>
         </div>
         <div class="btn-login-signin">
-            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
-            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+            <div class="btn-log btn-logIn"><a href="login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="register.html">Đăng ký</a></div>
         </div>
     </header>
     <!--slide-filterSearch-Brand-->
@@ -73,22 +73,206 @@
                     <div class="filter-content-3">
                         <div class="place">
                             <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="text">
-                                <div class="text1">Địa điểm</div>
-                                <div class="text2">Bạn muốn đi đâu</div>
+                            <div class="place-text">
+                                <div class="place-text1">Địa điểm</div>
+                                <div class="place-text2" id="place-text2">Bạn muốn đi đâu</div>
                             </div>
                         </div>
                         <div class="departure-location">
-                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="text">
-                                <div class="text1">Khởi hành từ</div>
-                                <div class="text2">Vui lòng chọn</div>
+                            <div class="dl-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="dl-text">
+                                <div class="dl-text1">Khởi hành từ</div>
+                                <div class="dl-text2" id="dl-text2">Vui lòng chọn</div>
                             </div>
                         </div>
                         <div class="find-now">
                             <div class="btn-findNow"><a href="#">Tìm ngay</a></div>
                          </div>
                     </div>
+                    <div class="dropdown-please" id="dropdownPlease">
+                        <ul>
+                            <li data-value="Hồ Chí Minh">Hồ Chí Minh</li>
+                            <li data-value="Hà Nội">Hà Nội</li>
+                            <li data-value="Đà Nẵng">Đà Nẵng</li>
+                            <li data-value="Nha Trang">Nha Trang</li>
+                            <li data-value="Phú Quốc">Phú Quốc</li>
+                            <li data-value="Huế">Huế</li>
+                            <li data-value="Cần Thơ">Cần Thơ</li>
+                            <li data-value="Đà Lạt">Đà Lạt</li>
+                            <li data-value="Quy Nhơn">Quy Nhơn</li>
+                            <li data-value="Hạ Long">Hạ Long</li>
+                            <li data-value="Tây Nguyên">Tây Nguyên</li>
+                            <li data-value="Gói cơ bản">Gói cơ bản</li>
+                            <li data-value="Gói tiêu chuẩn">Gói tiêu chuẩn</li>
+                            <li data-value="Gói cao cấp">Gói cao cấp</li>
+                        </ul>
+                    </div>
+                    <!-- Dropdown -->
+                    <div class="dropdown-container" id="dropdownContainer">
+                            
+                        <div class="tour-dropdown">
+                            <div class="dropdown-title">Địa điểm nổi bật</div>
+                            <div class="dropdown-section dropdown-section-1">
+                                
+                                <div class="dropdowns-item d-item" data-location="Thái Lan">
+                                    <img src="./images/dropdown-thailan.jpg" alt="Thái Lan">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Thái Lan</span>
+                                        <div class="dd-hotel-text">23 khách sạn</div>
+                                    </div>
+                                </div>
+                                <div class="dropdowns-item d-item" data-location="Nhật Bản">
+                                    <img src="./images/dropdown-nhatban.jpg" alt="Nhật Bản">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Nhật Bản</span>
+                                        <div class="dd-hotel-text">18 khách sạn</div>
+                                    </div>
+                                </div>
+                                <div class="dropdowns-item d-item" data-location="Hàn Quốc">
+                                    <img src="./images/dropdown-hanquoc.jpg" alt="Hàn Quốc">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Hàn Quốc</span>
+                                        <div class="dd-hotel-text">18 khách sạn</div>
+                                    </div>
+                                </div>
+                                <div class="dropdowns-item d-item" data-location="Sapa">
+                                    <img src="./images/dropdown-sapa.png" alt="Sapa">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Sapa</span>
+                                        <div class="dd-hotel-text">18 khách sạn</div>
+                                    </div>
+                                </div>
+                                <div class="dropdowns-item d-item" data-location="Đà Nẵng">
+                                    <img src="./images/dropdown-danang.jpg" alt="Đà Nẵng">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Đà Nẵng</span>
+                                        <div class="dd-hotel-text">25 khách sạn</div>
+                                    </div>
+                                </div>
+                                <div class="dropdowns-item d-item" data-location="Nha Trang">
+                                    <img src="./images/dropdown-nhatrang.jpg" alt="Nha Trang">
+                                    <div class="dd-hotel-main">
+                                        <span class="dd-name">Nha Trang</span>
+                                        <div class="dd-hotel-text">33 khách sạn</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="travel-all">
+                        <!--Du lịch trong nước và nước ngoài -->
+                        <div class="dropdown-section-2">
+                            <div class="dropdown-items toggle-section" onclick="toggleSubMenu('domestic')">
+                                <i class="fa fa-chevron-right arrow-icon" id="arrow-international"></i>Du lịch trong nước</div>
+                            <div class="sub-options" id="domestic">
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('north')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-north"></i> Miền Bắc
+                                </div>
+                                <div class="sub-options-inner" id="north">
+                                    <div class="dropdowns-item" data-location="Sapa">Sapa</div>
+                                    <div class="dropdowns-item" data-location="Ninh Bình">Ninh Bình</div>
+                                    <div class="dropdowns-item" data-location="Hạ Long">Hạ Long</div>
+                                    <div class="dropdowns-item" data-location="Đông Tây Bắc">Đông Tây Bắc</div>
+                                    <div class="dropdowns-item" data-location="Hà Giang">Hà Giang</div>
+                                    <div class="dropdowns-item" data-location="Hà Nội">Hà Nội</div>
+                                    <div class="dropdowns-item" data-location="Cát Bà">Cát Bà</div>
+                                    <div class="dropdowns-item" data-location="Mộc Châu">Mộc Châu</div>
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('central')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-central"></i> Miền Trung
+                                </div>
+                                <div class="sub-options-inner" id="central">
+                                    <div class="dropdowns-item" data-location="Đà Nẵng">Đà Nẵng</div>
+                                    <div class="dropdowns-item" data-location="Nha Trang">Nha Trang</div>
+                                    <div class="dropdowns-item" data-location="Đà Lạt">Đà Lạt</div>
+                                    <div class="dropdowns-item" data-location="Quy Nhơn">Quy Nhơn</div>
+                                    <div class="dropdowns-item" data-location="Hội An">Hội An</div>
+                                    <div class="dropdowns-item" data-location="Huế">Huế</div>
+                                    <div class="dropdowns-item" data-location="Quảng Bình">Quảng Bình</div>
+                                    <div class="dropdowns-item" data-location="Tây Nguyên">Tây Nguyên</div>
+                                  
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('south')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-south"></i> Miền Nam
+                                </div>
+                                <div class="sub-options-inner" id="south">
+                                    <div class="dropdowns-item" data-location="Phú Quốc">Phú Quốc</div>
+                                    <div class="dropdowns-item" data-location="Miền Tây">Miền Tây</div>
+                                    <div class="dropdowns-item" data-location="TP. Hồ Chí Minh">TP. Hồ Chí Minh</div>
+                                    <div class="dropdowns-item" data-location="Côn Đảo">Côn Đảo</div>
+                                    <div class="dropdowns-item" data-location="Phan Thiết">Phan Thiết</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="dropdown-section">
+                            <div class="dropdown-items toggle-section" onclick="toggleSubMenu('international')">
+                                <i class="fa fa-chevron-right arrow-icon" id="arrow-international"></i> Du lịch nước ngoài
+                            </div>
+                            <div class="sub-options" id="international">
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('southeast-asia')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-southeast-asia"></i> Đông Nam Á
+                                </div>
+                                <div class="sub-options-inner" id="southeast-asia">
+                                    <div class="dropdowns-item" data-location="Thái Lan">Thái Lan</div>
+                                    <div class="dropdowns-item" data-location="Singapore">Singapore</div>
+                                    <div class="dropdowns-item" data-location="Bali">Bali</div>
+                                    <div class="dropdowns-item" data-location="Phuket">Phuket</div>
+                                    <div class="dropdowns-item" data-location="Singapore-Malaysia">Singapore - Malaysia</div>
+                                    <div class="dropdowns-item" data-location="Indonesia">Indonesia</div>
+                                    <div class="dropdowns-item" data-location="Malaysia">Malaysia</div>
+                                    <div class="dropdowns-item" data-location="Myanmar">Myanmar</div>
+                                    <div class="dropdowns-item" data-location="Campuchia">Campuchia</div>
+                                    <div class="dropdowns-item" data-location="Philippines">Philippines</div>
+                                    <div class="dropdowns-item" data-location="Lào">Lào</div>
+                                    <!-- Các item khác -->
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('asia')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-asia"></i> Châu Á
+                                </div>
+                                <div class="sub-options-inner" id="asia">
+                                    <div class="dropdowns-item" data-location="Nhật Bản">Nhật Bản</div>
+                                    <div class="dropdowns-item" data-location="Hàn Quốc">Hàn Quốc</div>
+                                    <div class="dropdowns-item" data-location="Trung Quốc">Trung Quốc</div>
+                                    <div class="dropdowns-item" data-location="Đài Loan">Đài Loan</div>
+                                    <div class="dropdowns-item" data-location="Dubai">Dubai</div>
+                                    <div class="dropdowns-item" data-location="Hồng Kông">Hồng Kông</div>
+                                    <div class="dropdowns-item" data-location="Ấn Độ">Ấn Độ</div>
+                                    <div class="dropdowns-item" data-location="Bắc Kinh">Bắc Kinh</div>
+                                    <!-- Các item khác -->
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('europe')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-europe"></i> Châu Âu
+                                </div>
+                                <div class="sub-options-inner" id="europe">
+                                    <div class="dropdowns-item" data-location="Pháp">Pháp</div>
+                                    <div class="dropdowns-item" data-location="Đức">Đức</div>
+                                    <div class="dropdowns-item" data-location="Thụy Sĩ">Thụy Sĩ</div>
+                                    <div class="dropdowns-item" data-location="Ý">Ý</div>
+                                    <div class="dropdowns-item" data-location="Hà Lan">Hà Lan</div>
+                                    <div class="dropdowns-item" data-location="Anh">Anh</div>
+                                    <div class="dropdowns-item" data-location="Nga">Nga</div>
+                                    <!-- Các item khác -->
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('australia')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-australia"></i> Châu Úc
+                                </div>
+                                <div class="sub-options-inner" id="australia">
+                                    <div class="dropdown-items" data-location="Úc">Úc</div>
+                                   
+                                    <!-- Các item khác -->
+                                </div>
+                                <div class="dropdown-items toggle-submenu" onclick="toggleSubMenu('america')">
+                                    <i class="fa fa-chevron-right arrow-icon" id="arrow-america"></i> Châu Mỹ
+                                </div>
+                                <div class="sub-options-inner" id="america">
+                                    <div class="dropdowns-item" data-location="Mỹ">Mỹ</div>
+                                    <div class="dropdowns-item" data-location="Canada">Canada</div>
+                                    <!-- Các item khác -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>  
                 </div>
             </div>
         </div>

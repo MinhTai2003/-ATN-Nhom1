@@ -7,6 +7,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Vé máy bay</title>
 </head>
 <body>
@@ -40,8 +41,8 @@
             </ul>
         </div>
         <div class="btn-login-signin">
-            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
-            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+            <div class="btn-log btn-logIn"><a href="login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="register.html">Đăng ký</a></div>
         </div>
     </header>
     <!--filter-search air-->
@@ -63,45 +64,324 @@
                 <div class="filter-air-1">
                 <div class="content-left">
                     <div class="content-left-1">
-                        <div class="departure-point">
+                        <div class="departure-point" onclick="toggleSelector('departureSelector')">
                             <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
                             <div class="text">
                                 <div class="text1">Điểm đi</div>
                                 <div class="text2" id="swaptext1">Chọn địa điểm</div>
                             </div>
                         </div>
-                        <div class="swap" id="swap"><i class="fa-solid fa-right-left"></i></div>
-                        <div class="arrival-point">
+                        <div class="swap" id="swap-air"><i class="fa-solid fa-right-left"></i></div>
+                        <div class="arrival-point" onclick="toggleSelector('arrivalSelector')">
                             <div class="icon"><i class="fa-solid fa-plane-arrival"></i></div>
                             <div class="text">
                                 <div class="text1">Điểm đến</div>
                                 <div class="text2" id="swaptext2">Chọn địa điểm</div>
                             </div>
                         </div>
+                        <!-- Bảng chọn địa điểm cho điểm đi -->
+                <div class="location-selector" id="departureSelector">
+                    <div class="location-selector-title">Chọn điểm đi</div>
+                    <div class="location-selector-content">
+                    <div class="location-categories">
+                        <div class="location-category" onclick="showOptions('departure', 'vietnam')">Việt Nam</div>
+                        <div class="location-category" onclick="showOptions('departure', 'asean')">Đông Nam Á</div>
+                        <div class="location-category" onclick="showOptions('departure', 'asia')">Châu Á</div>
+                        <div class="location-category" onclick="showOptions('departure', 'europe')">Châu Âu</div>
+                        <div class="location-category" onclick="showOptions('departure', 'oceania')">Châu Úc</div>
+                        <div class="location-category" onclick="showOptions('departure', 'americas')">Châu Mỹ</div>
                     </div>
-                    <div class="content-left-2">
-                        <div class="departure-date">
-                            <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="text">
-                                <div class="text1">Ngày đi</div>
-                                <div class="text2">Chọn ngày đi</div>
-                            </div>
-                        </div>
-                        <div class="arrival-date">
-                            <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
-                            <div class="text">
-                                <div class="text1">Ngày về</div>
-                                <div class="text2">Chọn ngày về</div>
-                            </div>
-                        </div>
-                        <div class="passenger">
-                            <div class="icon"><i class="fa-solid fa-user"></i></div>
-                            <div class="text">
-                                <div class="text1">Hành khách</div>
-                                <div class="text2">Chọn số lượng</div>
-                            </div>
-                        </div>
+                    <div class="location-options" id="departure-vietnam">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hà Nội (HAN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hồ Chí Minh (SGN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đà Nẵng (DAD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nha Trang (CXR)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phú Quốc (PQC)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Huế (HUI)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hải Phòng (HPH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Cần Thơ (VCA)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Côn Đảo (VCS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Thanh Hóa (THD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đà Lạt (DLI)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Quy Nhơn (UIH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Cà Mau (CAH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chu Lai (VCL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Buôn Ma Thuột (BMV)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Điện Biên (DIN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Đồng Hới (VDH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tuy Hòa (TBB)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Pleiku (PXU)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Rạch Giá (VKG)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vinh (VII)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vân Đồn (VDO)</div>
                     </div>
+                    <div class="location-options" id="departure-asean">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bali (DPS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bangkok (BKK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chiang Mai (CNX)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chiang Rai (CEI)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Jarkarta (CGK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kuala Lumpur (KUL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Luang Prabang (LPQ)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Manila (MNL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phnom Penh (PNH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Phuket (HKT)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Siem Reap (SAI)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Sihanoukville (KOS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Singapore (SIN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vientiane (VTE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Yangon (RGN)</div>
+                    </div>
+                    <div class="location-options" id="departure-asia">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Ahmedabad (AMD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bắc Kinh (PEK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Bangalore (BLR)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Busan (PUS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chengdu (CTU)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Daegu (TAE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Dubai (DXB)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Fukuoka (FUK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Guangzhou (CAN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hàng Châu (HGH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hồng Kông (HKG)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Hyderabad (HYD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kaohsiung (KHH)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Kochi (COK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Mumbai (BOM)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nagoya (NGO)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">New Delhi (DEL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Osaka (KIX)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Seoul (ICN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Shanghai (PVG)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Taipei (TPE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tokyo Haneda (HND)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Tokyo Narita (NRT)</div>
+                    </div>
+                    <div class="location-options" id="departure-europe">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Amsterdam (AMS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Barcelona (BCN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Frankfurt (FRA)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Geneva (GVA)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">London (LHR)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Lyon (LYS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Madrid (MAD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Marseille (MRS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Montpellier (MPL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Moscow (SVO)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Nice (NCE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Paris (CDG)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Prague (PRG)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Rome (ROM)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Toulouse (TLS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vienna (VIE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Zurich (ZRH)</div>
+                    </div>
+                    <div class="location-options" id="departure-oceania">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Adelaide (ADL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Brisbane (BNE)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Meibourne (MEL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Perth (PER)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Sydney (SYD)</div>
+                    </div>
+                    <div class="location-options" id="departure-americas">
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Atlanta Hartsfield (ATL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Austin (AUS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Boston, Logan (BOS)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Chicago IL (CHI)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Dallas Fort Worth (DFW)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Denver (DEN)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Los Angeles (LAX)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Miami (MIA)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Minneapolis/St.Paul (MSP)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">New York (JFK)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">PortLand (PXD)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">San Francisco (SFO)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Seattle, Tacoma (SEA)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">St Louis, Lambert (STL)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Vancouver (YVR)</div>
+                        <div class="option" onclick="selectOption('swaptext1', 'departureSelector')">Washington (WAS)</div>
+                    </div>
+                    <!-- Thêm các nhóm tùy chọn cho các khu vực khác -->
+                </div>
+                </div>
+            
+                <!-- Bảng chọn địa điểm cho điểm đến -->
+                <div class="location-selector" id="arrivalSelector">
+                    <div class="location-selector-title">Chọn điểm đi</div>
+                    <div class="location-selector-content">
+                    <div class="location-categories">
+                        <div class="location-category" onclick="showOptions('arrival', 'vietnam')">Việt Nam</div>
+                        <div class="location-category" onclick="showOptions('arrival', 'asean')">Đông Nam Á</div>
+                        <div class="location-category" onclick="showOptions('arrival', 'asia')">Châu Á</div>
+                        <div class="location-category" onclick="showOptions('arrival', 'europe')">Châu Âu</div>
+                        <div class="location-category" onclick="showOptions('arrival', 'oceania')">Châu Úc</div>
+                        <div class="location-category" onclick="showOptions('arrival', 'americas')">Châu Mỹ</div>
+                    </div>
+                    <div class="location-options" id="arrival-vietnam">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hà Nội (HAN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hồ Chí Minh (SGN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đà Nẵng (DAD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nha Trang (CXR)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phú Quốc (PQC)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Huế (HUI)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hải Phòng (HPH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Cần Thơ (VCA)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Côn Đảo (VCS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Thanh Hóa (THD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đà Lạt (DLI)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Quy Nhơn (UIH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Cà Mau (CAH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chu Lai (VCL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Buôn Ma Thuột (BMV)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Điện Biên (DIN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Đồng Hới (VDH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tuy Hòa (TBB)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Pleiku (PXU)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Rạch Giá (VKG)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vinh (VII)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vân Đồn (VDO)</div>
+                    </div>
+                    <div class="location-options" id="arrival-asean">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bali (DPS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bangkok (BKK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chiang Mai (CNX)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chiang Rai (CEI)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Jarkarta (CGK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kuala Lumpur (KUL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Luang Prabang (LPQ)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Manila (MNL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phnom Penh (PNH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Phuket (HKT)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Siem Reap (SAI)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Sihanoukville (KOS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Singapore (SIN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vientiane (VTE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Yangon (RGN)</div>
+                    </div>
+                    <div class="location-options" id="arrival-asia">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Ahmedabad (AMD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bắc Kinh (PEK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Bangalore (BLR)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Busan (PUS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chengdu (CTU)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Daegu (TAE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Dubai (DXB)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Fukuoka (FUK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Guangzhou (CAN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hàng Châu (HGH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hồng Kông (HKG)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Hyderabad (HYD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kaohsiung (KHH)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Kochi (COK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Mumbai (BOM)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nagoya (NGO)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">New Delhi (DEL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Osaka (KIX)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Seoul (ICN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Shanghai (PVG)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Taipei (TPE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tokyo Haneda (HND)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Tokyo Narita (NRT)</div>
+                    </div>
+                    <div class="location-options" id="arrival-europe">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Amsterdam (AMS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Barcelona (BCN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Frankfurt (FRA)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Geneva (GVA)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">London (LHR)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Lyon (LYS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Madrid (MAD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Marseille (MRS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Montpellier (MPL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Moscow (SVO)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Nice (NCE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Paris (CDG)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Prague (PRG)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Rome (ROM)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Toulouse (TLS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vienna (VIE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Zurich (ZRH)</div>
+                    </div>
+                    <div class="location-options" id="arrival-oceania">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Adelaide (ADL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Brisbane (BNE)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Meibourne (MEL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Perth (PER)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Sydney (SYD)</div>
+                    </div>
+                    <div class="location-options" id="arrival-americas">
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Atlanta Hartsfield (ATL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Austin (AUS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Boston, Logan (BOS)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Chicago IL (CHI)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Dallas Fort Worth (DFW)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Denver (DEN)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Los Angeles (LAX)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Miami (MIA)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Minneapolis/St.Paul (MSP)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">New York (JFK)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">PortLand (PXD)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">San Francisco (SFO)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Seattle, Tacoma (SEA)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">St Louis, Lambert (STL)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Vancouver (YVR)</div>
+                        <div class="option" onclick="selectOption('swaptext2', 'arrivalSelector')">Washington (WAS)</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="content-left-2">
+                <div class="picker-container" id="departureDatePicker">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="picker-content">
+                        <div class="picker-name">Ngày Đi</div> 
+                        <span style="color: #000;" id="departureDateText">Chọn ngày</span></div>
+                </div>
+                
+                <div class="picker-container" id="returnDatePicker">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="picker-content">
+                        <div class="picker-name">Ngày Về</div>
+                        <span style="color: #000;" id="returnDateText">Chọn ngày</span>
+                    </div>
+                </div>
+                
+                <div class="picker-container" id="guestPickerContainer">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="picker-content">
+                        <div class="picker-name">Số Khách</div> 
+                        <span style="color: #000;" id="guestCount">Chọn số người</span>
+                    </div>
+                </div>
+                <!-- Dropdowns -->
+                <div class="dropdown guest-dropdown" 
+                style="width: 230px; position: absolute; top: 90%; left: 70%;" id="guestDropdown">
+                    <div class="guest-item">
+                        <label>Người lớn</label>
+                        <div class="select-quantity">
+                        <button class="counter-btn" id="adultMinus"><i class="fa-solid fa-minus"></i></button>
+                        <span class="counter-value" id="adultCount">0</span>
+                        <button class="counter-btn" id="adultPlus"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    </div>
+                    <div class="guest-item">
+                        <label>Trẻ em</label>
+                        <div class="select-quantity">
+                        <button class="counter-btn" id="childMinus"><i class="fa-solid fa-minus"></i></button>
+                        <span class="counter-value" id="childCount">0</span>
+                        <button class="counter-btn" id="childPlus"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    </div>
+                    <div class="guest-item">
+                        <label>Em bé</label>
+                        <div class="select-quantity">
+                        <button class="counter-btn" id="infantMinus"><i class="fa-solid fa-minus"></i></button>
+                        <span class="counter-value" id="infantCount">0</span>
+                        <button class="counter-btn" id="infantPlus"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    </div>
+                </div>
+            </div>
                 </div>
                 <div class="content-right">
                     <div class="content-right-1">
@@ -118,6 +398,7 @@
             </div>
             </div>
         </div>
+        <!--brand-->
         <div class="brand-air">
             <div class="list-brand">
                 <div class="journey">
@@ -544,39 +825,6 @@
         </div>
     </Footer>
 </body>
-<script>
-    //question
-  document.getElementById("toggle-question-1").addEventListener("click", function() {
-    document.getElementById("question-item-1").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-2").addEventListener("click", function() {
-    document.getElementById("question-item-2").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-3").addEventListener("click", function() {
-    document.getElementById("question-item-3").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-4").addEventListener("click", function() {
-    document.getElementById("question-item-4").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-5").addEventListener("click", function() {
-    document.getElementById("question-item-5").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-6").addEventListener("click", function() {
-    document.getElementById("question-item-6").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-7").addEventListener("click", function() {
-    document.getElementById("question-item-7").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-8").addEventListener("click", function() {
-    document.getElementById("question-item-8").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-9").addEventListener("click", function() {
-    document.getElementById("question-item-9").classList.toggle("shrink");
-  });
-  document.getElementById("toggle-question-10").addEventListener("click", function() {
-    document.getElementById("question-item-10").classList.toggle("shrink");
-  });
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="./js/app.js"></script>
 </html>
