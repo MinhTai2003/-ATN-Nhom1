@@ -41,8 +41,8 @@
             </ul>
         </div>
         <div class="btn-login-signin">
-            <div class="btn-log btn-logIn"><a href="./log/login.html">Đăng nhập</a></div>
-            <div class="btn-log btn-signIn"><a href="./log/register.html">Đăng ký</a></div>
+            <div class="btn-log btn-logIn"><a href="login.html">Đăng nhập</a></div>
+            <div class="btn-log btn-signIn"><a href="register.html">Đăng ký</a></div>
         </div>
     </header>
     <div class="navigation">
@@ -244,12 +244,25 @@
     <i class="fa-solid fa-bed"></i>
     <div class="picker-content">
         <div class="picker-name">Số Phòng</div> 
-        <span id="numberRoomCount">Chọn số phòng</span>
+        <span id="roomCount">Chọn số phòng</span>
     </div>
 </div>
 </div>
     <div class="btn-seeRoomRate"><a href="#room-review-title">Xem giá phòng</a></div>
 </div>
+<!--dropdown room-->
+<div class="dropdown room-dropdown" id="roomDropdown">
+    <div class="room-item" data-value="1">1 Phòng</div>
+    <div class="room-item" data-value="2">2 Phòng</div>
+    <div class="room-item" data-value="3">3 Phòng</div>
+    <div class="room-item" data-value="4">4 Phòng</div>
+    <div class="room-item" data-value="5">5 Phòng</div>
+    <div class="room-item" data-value="6">6 Phòng</div>
+    <div class="room-item" data-value="7">7 Phòng</div>
+    <div class="room-item" data-value="8">8 Phòng</div>
+    <div class="room-item" data-value="9">9 Phòng</div>
+    <div class="room-item" data-value="10">10 Phòng</div>
+</div> 
 <!-- Dropdowns -->
 <div class="dropdown guest-dropdown" id="guestDropdown">
     <div class="guest-item">
@@ -277,19 +290,7 @@
     </div>
     </div>
 </div>
-
-<div class="dropdown room-dropdown" id="roomDropdown">
-    <div class="room-item" data-value="1">1 Phòng</div>
-    <div class="room-item" data-value="2">2 Phòng</div>
-    <div class="room-item" data-value="3">3 Phòng</div>
-    <div class="room-item" data-value="4">4 Phòng</div>
-    <div class="room-item" data-value="5">5 Phòng</div>
-    <div class="room-item" data-value="6">6 Phòng</div>
-    <div class="room-item" data-value="7">7 Phòng</div>
-    <div class="room-item" data-value="8">8 Phòng</div>
-    <div class="room-item" data-value="9">9 Phòng</div>
-    <div class="room-item" data-value="10">10 Phòng</div>
-</div>        
+       
 </div>
 <div class="room-review">
     <div class="room-review-container">

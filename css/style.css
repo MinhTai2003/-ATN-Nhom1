@@ -2771,7 +2771,7 @@ button.arrow-right {
     color: #999;
 }
 #departureDateText, #returnDateText,
-#guestCount, #numberRoomCount, 
+#guestCount, #roomCount, 
 #departureDateText2, #returnDateText2{
     font-weight: bold;
     cursor: pointer;
@@ -2798,21 +2798,17 @@ button.arrow-right {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-
-.dropdown {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: none;
-    
-}
 .guest-dropdown{
     position: absolute;
     top: 70px;
     left: 45%;
-    width: 35%;
+    width: 25%;
     height: auto;
     padding: 20px;
     z-index: 20;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 .guest-item{
     display: flex;
@@ -2870,6 +2866,9 @@ button.arrow-right {
     height: auto;
     padding: 10px 0;
     border-radius: 10px;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 
 .room-item {
@@ -3111,6 +3110,65 @@ button.arrow-right {
 .letter-5{
     color: #ba0000;
     font-weight: bold;
+}
+/*regulation*/
+.tb-regulation{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+.tb-regulation-container{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.tb-regulation-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.tb-regulation-item{
+    margin-bottom: 20px;
+
+}
+.tb-regulation-hd{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.tb-regulation-icon{
+    font-size: 28px;
+    color: #585858;
+    margin-right: 10px;
+}
+.tb-regulation-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+ul.tb-regulation-content{
+    list-style-position: inside;
+    margin-left: 20px;
+    line-height: 2;
+}
+.tb-r-content-1{
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px;
+    display: flex;
+} 
+.tb-r-content-2{
+    padding-bottom: 10px;
+    display: flex;
+    padding-top: 10px;
+} 
+.tb-r-1, .tb-r-2{
+    padding-right: 30px;
+    width: 20%;
+}
+.tb-r-content-1 > span, 
+.tb-r-content-2 > span{
+    width: 80%;
 }
 
 /*evaluate*/
@@ -3685,7 +3743,7 @@ textarea {
     color: #777575;
     margin-bottom: 5px;
 }
-.text2{
+.text2, .swaptext2, .swaptext1{
     font-size: 15px;
     font-weight: bold;
     color: #565353;
@@ -4450,7 +4508,7 @@ button.arrowRight-tour {
     color: #000;
 }
 #tourBooking-overview-name, #tourBooking-schedule-name,
-#evaluate-title-tb, #qa-title-tb, #tour-similar-name{
+#tb-regulation-title, #evaluate-title-tb, #qa-title-tb, #tour-similar-name{
     scroll-margin-top: 150px;
 }
 .introduce-tourBooking > a:hover{

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Slide show logic
     const slideWrapper = document.querySelector('.slide-wrapper-hotelbooking');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', updateSlidePosition);
 });
+
 
 //(hotel-item)
 
@@ -216,9 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
 //-----------------------------------------------JS TOUR BOOKING -T2--------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -309,6 +308,8 @@ function stickyMenu() {
     headerMain.classList.remove("sticky");
   }
 }
+
+
 
 function swapItems(event, newText, newIconClass) {
     event.preventDefault();
@@ -424,6 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
         handleEvent = setInterval(handleChangeSlide, 4000)
     })
 });
+
 
 // filter-search
     document.addEventListener("DOMContentLoaded", function() {
@@ -558,6 +560,7 @@ const guestPickerContainerMain = document.getElementById('guestPickerContainer')
   let adultCountMain = 0;
   let childCountMain = 0;
   let infantCountMain = 0;
+  
 
   // Cập nhật hiển thị tổng số khách
   function updateGuestDisplay() {
@@ -611,10 +614,10 @@ const guestPickerContainerMain = document.getElementById('guestPickerContainer')
   });
 
   // Hiển thị dropdown khi click vào số khách
-  document.getElementById('guestPickerContainer').addEventListener('click', (event) => {
+  document.getElementById('guestPickerContainer').addEventListener('click', () => {
       document.getElementById('guestDropdown').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
-      event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
+      event.stopPropagation(); 
   });
 
   // Đóng dropdown khi click ra ngoài
@@ -622,29 +625,20 @@ const guestPickerContainerMain = document.getElementById('guestPickerContainer')
     if (!document.getElementById('guestPickerContainer').contains(event.target) && !document.getElementById('guestDropdown').contains(event.target)) {
         document.getElementById('guestDropdown').style.display = 'none';
     }
-    document.getElementById('overlay').style.display = 'none'; // Ẩn lớp overlay khi click ra ngoài
+    document.getElementById('overlay').style.display = 'none';
 });
 
-// Ngăn đóng dropdown khi click bên trong dropdown
-document.getElementById('guestDropdown').addEventListener('click', (event) => {
-    event.stopPropagation();
-});
+
 
 //SEARCH HOTEL - MAIN
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('locationText').addEventListener('click', function(event) {
+    document.getElementById('locationText').addEventListener('click', (event) => {
     const dropdown = document.getElementById('locationDropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
     event.stopPropagation();
 });
     });
 
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('locationDropdown');
-    if (event.target.closest('#locationDropdown') === null) {
-        dropdown.style.display = 'none';
-    }
-});
 
 document.querySelectorAll('.dropdown-item').forEach(function(item) {
     item.addEventListener('click', function() {
@@ -653,6 +647,7 @@ document.querySelectorAll('.dropdown-item').forEach(function(item) {
         document.getElementById('locationDropdown').style.display = 'none';
     });
 });
+
 
 //---------------------------------------------------JS AIRLINE TICKET - VE MAY BAY------------------------------------
 
@@ -665,6 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 });
+
 
 // SEARCH TIME - GUEST - 2
 // Khởi tạo flatpickr cho ngày đi
@@ -698,183 +694,122 @@ let returnDateTextMain2 = flatpickr("#returnDateText2", {
         }
     }
 });
-
+//dropdown số khách 
 document.addEventListener('DOMContentLoaded', function() {
-const guestPickerContainerMain2 = document.getElementById('guestPickerContainer2');
-  const guestDropdownMain2 = document.getElementById('guestDropdown2');
-
-  let adultCountMain2 = 0;
-  let childCountMain2 = 0;
-  let infantCountMain2 = 0;
-
-  // Cập nhật hiển thị tổng số khách
-  function updateGuestDisplay() {
-      const totalGuests2 = adultCountMain2 + childCountMain2 + infantCountMain2;
-      document.getElementById('guestCount2').textContent = totalGuests2;
-  }
-
-  // Số lượng người lớn
-  document.getElementById('adultPlus2').addEventListener('click', () => {
-      adultCountMain2++;
-      document.getElementById('adultCount2').textContent = adultCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('adultMinus2').addEventListener('click', () => {
-      if (adultCountMain2 > 0) {
-          adultCountMain2--;
+    const guestPickerContainerMain2 = document.getElementById('guestPickerContainer2');
+      const guestDropdownMain2 = document.getElementById('guestDropdown2');
+    
+      let adultCountMain2 = 0;
+      let childCountMain2 = 0;
+      let infantCountMain2 = 0;
+    
+      // Cập nhật hiển thị tổng số khách
+      function updateGuestDisplay() {
+          const totalGuests2 = adultCountMain2 + childCountMain2 + infantCountMain2;
+          document.getElementById('guestCount2').textContent = totalGuests2;
+      }
+    
+      // Số lượng người lớn
+      document.getElementById('adultPlus2').addEventListener('click', () => {
+          adultCountMain2++;
           document.getElementById('adultCount2').textContent = adultCountMain2;
           updateGuestDisplay();
-      }
-  });
-
-  // Số lượng trẻ em
-  document.getElementById('childPlus2').addEventListener('click', () => {
-      childCountMain2++;
-      document.getElementById('childCount2').textContent = childCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('childMinus2').addEventListener('click', () => {
-      if (childCountMain2 > 0) {
-          childCountMain2--;
+      });
+    
+      document.getElementById('adultMinus2').addEventListener('click', () => {
+          if (adultCountMain2 > 0) {
+              adultCountMain2--;
+              document.getElementById('adultCount2').textContent = adultCountMain2;
+              updateGuestDisplay();
+          }
+      });
+    
+      // Số lượng trẻ em
+      document.getElementById('childPlus2').addEventListener('click', () => {
+          childCountMain2++;
           document.getElementById('childCount2').textContent = childCountMain2;
           updateGuestDisplay();
-      }
-  });
-
-  // Số lượng em bé
-  document.getElementById('infantPlus2').addEventListener('click', () => {
-      infantCountMain2++;
-      document.getElementById('infantCount2').textContent = infantCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('infantMinus2').addEventListener('click', () => {
-      if (infantCountMain2 > 0) {
-          infantCountMain2--;
+      });
+    
+      document.getElementById('childMinus2').addEventListener('click', () => {
+          if (childCountMain2 > 0) {
+              childCountMain2--;
+              document.getElementById('childCount2').textContent = childCountMain2;
+              updateGuestDisplay();
+          }
+      });
+    
+      // Số lượng em bé
+      document.getElementById('infantPlus2').addEventListener('click', () => {
+          infantCountMain2++;
           document.getElementById('infantCount2').textContent = infantCountMain2;
           updateGuestDisplay();
-      }
-  });
+      });
+    
+      document.getElementById('infantMinus2').addEventListener('click', () => {
+          if (infantCountMain2 > 0) {
+              infantCountMain2--;
+              document.getElementById('infantCount2').textContent = infantCountMain2;
+              updateGuestDisplay();
+          }
+      });
+    
+      // Hiển thị dropdown khi click vào số khách
+      document.getElementById('guestPickerContainer2').addEventListener('click', (event) => {
+          document.getElementById('guestDropdown2').style.display = 'block';
+          document.getElementById('overlay').style.display = 'block';
+          event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
+      });
+    
+      // Đóng dropdown khi click ra ngoài
+      document.addEventListener('click', (event) => {
+        if (!document.getElementById('guestPickerContainer2').contains(event.target) && !document.getElementById('guestDropdown2').contains(event.target)) {
+            document.getElementById('guestDropdown2').style.display = 'none';
+        }
+        document.getElementById('overlay').style.display = 'none'; // Ẩn lớp overlay khi click ra ngoài
+    });
+    
+    
+    });
+    
 
-  // Hiển thị dropdown khi click vào số khách
-  document.getElementById('guestPickerContainer2').addEventListener('click', (event) => {
-      document.getElementById('guestDropdown2').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-  });
+//DROPDOWN SỐ PHÒNG ( TRANG HOTELBOOOKING)
+const roomPickerContainer = document.getElementById('roomPickerContainer');
+const roomDropdown = document.getElementById('roomDropdown');
 
-  // Đóng dropdown khi click ra ngoài
-  document.addEventListener('click', (event) => {
-    if (!document.getElementById('guestPickerContainer2').contains(event.target) && !document.getElementById('guestDropdown2').contains(event.target)) {
-        document.getElementById('guestDropdown2').style.display = 'none';
+// Hiển thị dropdown khi click vào số phòng
+roomPickerContainer.addEventListener('click', (event) => {
+    if (roomDropdown.style.display === 'block') {
+        roomDropdown.style.display = 'none';
+    } else {
+        roomDropdown.style.display = 'block';
     }
-    document.getElementById('overlay').style.display = 'none'; // Ẩn lớp overlay khi click ra ngoài
-});
-
-// Ngăn đóng dropdown khi click bên trong dropdown
-document.getElementById('guestDropdown2').addEventListener('click', (event) => {
-    event.stopPropagation();
-});
-});
-
-// swap - hoán đổi 
-document.getElementById('swap-air').addEventListener('click', function() {
-    let swaptext1 = document.getElementById('swaptext1');
-    let swaptext2 = document.getElementById('swaptext2');
-    
-    let parent1 = swaptext1.parentNode;
-    let sibling1 = swaptext1.nextSibling === swaptext2 ? swaptext1 : swaptext1.nextSibling;
-    
-    swaptext2.parentNode.insertBefore(swaptext1, swaptext2.nextSibling);
-    parent1.insertBefore(swaptext2, sibling1);
+    event.stopPropagation(); // Ngăn sự kiện này lan ra ngoài để không đóng dropdown
 });
 
 
+// Cập nhật số phòng khi chọn
+document.querySelectorAll('#roomDropdown .room-item').forEach(item => {
+    item.addEventListener('click', (event) => {
+        const value = event.target.getAttribute('data-value');
+        document.getElementById('roomCount').textContent = value + ' phòng/đêm'; 
+        roomDropdown.style.display = 'none'; 
+        event.stopPropagation(); 
+        
+    });
+});
 
-//-------------------------------------------------JS HOTEL ITEM - T2------------------------------------------------
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Toggle button, arrange items, and highlights logic
-//     const toggleButton = document.getElementById('toggleSeemoreHide');
-//     const form4 = document.querySelector('.form-4');
+// Đóng dropdown nếu nhấp ra ngoài
+window.addEventListener('click', (event) => {
+    if (!roomPickerContainer.contains(event.target)) {
+        roomDropdown.style.display = 'none';
+    }
+});
 
-//     toggleButton.addEventListener('click', function() {
-//         form4.classList.toggle('expanded');
-//         if (form4.classList.contains('expanded')) {
-//             toggleButton.textContent = '[-] Ẩn xem thêm';
-//         } else {
-//             toggleButton.textContent = '[+] Xem thêm';
-//         }
-//     });
-
-//     const arrangeItem = document.querySelectorAll('.arrange-item');
-
-//     arrangeItem.forEach(item => {
-//         item.addEventListener('click', function() {   
-//             arrangeItem.forEach(i => i.classList.remove('active'));  
-//             this.classList.add('active');
-//         });
-//     });
-
-//     document.getElementById("highlights-title-1").addEventListener("click", function() {
-//         document.getElementById("highlights-content-1").classList.toggle("shrink");
-//     });
-//     document.getElementById("highlights-title-2").addEventListener("click", function() {
-//         document.getElementById("highlights-content-2").classList.toggle("shrink");
-//     });
-// });
 
 
 //-------------------------------JS HOTEL BOOKING T3-----------------------------------
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Slide show logic
-//     const slideWrapper = document.querySelector('.slide-wrapper-hotelbooking');
-//     const images = document.querySelectorAll('.slide-hotelbooking img');
-//     const nextButton = document.querySelector('.arrow-right');
-//     const prevButton = document.querySelector('.arrow-left');
-
-//     let currentIndex = 0;
-
-//     function updateSlidePosition() {
-//         const imageWidth = images[0].clientWidth;
-//         slideWrapper.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-//     }
-
-//     nextButton.addEventListener('click', () => {
-//         if (currentIndex < images.length - 3) {
-//             currentIndex++;
-//             updateSlidePosition();
-//         }
-//     });
-
-//     prevButton.addEventListener('click', () => {
-//         if (currentIndex > 0) {
-//             currentIndex--;
-//             updateSlidePosition();
-//         }
-//     });
-
-//     window.addEventListener('resize', updateSlidePosition);
-// });
-
-
-// //introduce-menu active
-// const introduceMenuItem = document.querySelectorAll('.introduce-menu-item');
-
-// introduceMenuItem.forEach(item => {
-//     item.addEventListener('click', function() {   
-//         introduceMenuItem.forEach(i => i.classList.remove('active'));  
-//         this.classList.add('active');
-//     });
-// });
-// //utilities shrink
-
-// document.getElementById("up-down").addEventListener("click", function() {
-//     document.getElementById("utilities-left").classList.toggle("shrink");
-//   });
 
   //SEARCH-HOTEL BOOKING
    // Khởi tạo flatpickr cho ngày đi
@@ -912,9 +847,9 @@ let returnDateText = flatpickr("#returnDateText", {
 
 
   const guestPickerContainer = document.getElementById('guestPickerContainer');
-  const roomPickerContainer = document.getElementById('roomPickerContainer');
+ 
   const guestDropdown = document.getElementById('guestDropdown');
-  const roomDropdown = document.getElementById('roomDropdown');
+  
 
   let adultCount = 0;
   let childCount = 0;
@@ -971,51 +906,7 @@ let returnDateText = flatpickr("#returnDateText", {
       }
   });
 
-  // Hiển thị dropdown khi click vào số khách
-  document.getElementById('guestPickerContainer').addEventListener('click', (event) => {
-      document.getElementById('guestDropdown').style.display = 'block';
-      document.getElementById('roomDropdown').style.display = 'none'; // Ẩn dropdown số phòng nếu mở số khách
-      document.getElementById('overlay').style.display = 'block';
-      event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-  });
 
-
-  // Hiển thị dropdown khi click vào số phòng
-  document.getElementById('roomPickerContainer').addEventListener('click', (event) => {
-      document.getElementById('roomDropdown').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-  });
-
-  // Cập nhật số phòng khi chọn
-  document.querySelectorAll('#roomDropdown .room-item').forEach(item => {
-      item.addEventListener('click', (event) => {
-          const value = event.target.getAttribute('data-value');
-          document.getElementById('numberRoomCount').textContent = value;
-          document.getElementById('roomDropdown').style.display = 'none';
-          document.getElementById('overlay').style.display = 'none'; 
-      });
-  });
-
-  // Đóng dropdown khi click ra ngoài
-  document.addEventListener('click', (event) => {
-      if (!document.getElementById('guestPickerContainer').contains(event.target) && !document.getElementById('guestDropdown').contains(event.target)) {
-          document.getElementById('guestDropdown').style.display = 'none';
-      }
-      if (!document.getElementById('roomPickerContainer').contains(event.target) && !document.getElementById('roomDropdown').contains(event.target)) {
-          document.getElementById('roomDropdown').style.display = 'none';
-      }
-      document.getElementById('overlay').style.display = 'none'; // Ẩn lớp overlay khi click ra ngoài
-  });
-
-  // Ngăn đóng dropdown khi click bên trong dropdown
-  document.getElementById('guestDropdown').addEventListener('click', (event) => {
-      event.stopPropagation();
-  });
-
-  document.getElementById('roomDropdown').addEventListener('click', (event) => {
-      event.stopPropagation();
-  });
 });
 //total-price
 
@@ -1038,12 +929,19 @@ let returnDateText = flatpickr("#returnDateText", {
           document.getElementById('taxRow').style.display = 'block';
           document.getElementById('totalRow').style.display = 'block';
           document.getElementById('btnBookNow').style.display = 'flex';
-          document.getElementById('roomCount').innerText = `${quantity} /room${quantity > 1 ? 's' : ''}/night`;
+          document.getElementById('roomCount').innerText = `${quantity} /phòng${quantity > 1 ? 's' : ''}/đêm`;
       } else {
           document.getElementById('taxRow').style.display = 'none';
           document.getElementById('totalRow').style.display = 'none';
           document.getElementById('btnBookNow').style.display = 'none';
           document.getElementById('roomCount').innerText = '/phòng/đêm';
+          document.querySelectorAll('#roomDropdown .room-item').forEach(item => {
+            item.addEventListener('click', (event) => {
+                const value = event.target.getAttribute('data-value');
+                document.getElementById('quantity').textContent = value ;
+               
+            });
+        });
       }
 
       document.getElementById('quantity').innerText = quantity;
@@ -1164,87 +1062,4 @@ function showNotification(message) {
         notification.classList.remove('show');
     }, 3000);
 }
-  //-----------------------------------------JS HOTEL  - T1------------------------------------------------------
-
-
-
-const guestPickerContainerMain2 = document.getElementById('guestPickerContainer2');
-  const guestDropdownMain2 = document.getElementById('guestDropdown2');
-
-  let adultCountMain2 = 0;
-  let childCountMain2 = 0;
-  let infantCountMain2 = 0;
-
-  // Cập nhật hiển thị tổng số khách
-  function updateGuestDisplay() {
-      const totalGuests2 = adultCountMain2 + childCountMain2 + infantCountMain2;
-      document.getElementById('guestCount3').textContent = totalGuests2;
-  }
-
-  // Số lượng người lớn
-  document.getElementById('adultPlus2').addEventListener('click', () => {
-      adultCountMain3++;
-      document.getElementById('adultCount2').textContent = adultCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('adultMinus2').addEventListener('click', () => {
-      if (adultCountMain2 > 0) {
-          adultCountMain2--;
-          document.getElementById('adultCount2').textContent = adultCountMain2;
-          updateGuestDisplay();
-      }
-  });
-
-  // Số lượng trẻ em
-  document.getElementById('childPlus2').addEventListener('click', () => {
-      childCountMain2++;
-      document.getElementById('childCount2').textContent = childCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('childMinus2').addEventListener('click', () => {
-      if (childCountMain2 > 0) {
-          childCountMain2--;
-          document.getElementById('childCount2').textContent = childCountMain2;
-          updateGuestDisplay();
-      }
-  });
-
-  // Số lượng em bé
-  document.getElementById('infantPlus2').addEventListener('click', () => {
-      infantCountMain2++;
-      document.getElementById('infantCount2').textContent = infantCountMain2;
-      updateGuestDisplay();
-  });
-
-  document.getElementById('infantMinus2').addEventListener('click', () => {
-      if (infantCountMain2 > 0) {
-          infantCountMain2--;
-          document.getElementById('infantCount2').textContent = infantCountMain2;
-          updateGuestDisplay();
-      }
-  });
-
-  // Hiển thị dropdown khi click vào số khách
-  document.getElementById('guestPickerContainer2').addEventListener('click', (event) => {
-      document.getElementById('guestDropdown2').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-      event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-  });
-
-  // Đóng dropdown khi click ra ngoài
-  document.addEventListener('click', (event) => {
-    if (!document.getElementById('guestPickerContainer2').contains(event.target) && !document.getElementById('guestDropdown2').contains(event.target)) {
-        document.getElementById('guestDropdown2').style.display = 'none';
-    }
-    document.getElementById('overlay').style.display = 'none'; // Ẩn lớp overlay khi click ra ngoài
-});
-
-// Ngăn đóng dropdown khi click bên trong dropdown
-document.getElementById('guestDropdown2').addEventListener('click', (event) => {
-    event.stopPropagation();
-});
-
-//-----------------------------------------JS TOUR  - T1------------------------------------------------------
-
+  
