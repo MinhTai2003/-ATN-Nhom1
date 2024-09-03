@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', function() {
     // Slide show logic
     const slideWrapper = document.querySelector('.slide-wrapper-hotelbooking');
@@ -37,10 +38,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle button, arrange items, and highlights logic
     const toggleButton = document.getElementById('toggleSeemoreHide');
     const form4 = document.querySelector('.form-4');
+    const form5 = document.querySelector('.content-main-left');
 
     toggleButton.addEventListener('click', function() {
         form4.classList.toggle('expanded');
         if (form4.classList.contains('expanded')) {
+            toggleButton.textContent = '[-] Ẩn xem thêm';
+        } else {
+            toggleButton.textContent = '[+] Xem thêm';
+        }
+    });
+    toggleButton.addEventListener('click', function() {
+        form5.classList.toggle('expanded');
+        if (form5.classList.contains('expanded')) {
             toggleButton.textContent = '[-] Ẩn xem thêm';
         } else {
             toggleButton.textContent = '[+] Xem thêm';
@@ -55,12 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+});
 
-    document.getElementById("highlights-title-1").addEventListener("click", function() {
-        document.getElementById("highlights-content-1").classList.toggle("shrink");
-    });
-    document.getElementById("highlights-title-2").addEventListener("click", function() {
-        document.getElementById("highlights-content-2").classList.toggle("shrink");
+//hotel item // điểm nổi bật
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.highlights-title').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            const content = document.querySelectorAll('.highlights-content')[index];
+            
+            if (content.style.height === '0px' || content.style.height === '') {
+                content.style.height = content.scrollHeight + 'px';
+            } else {
+                content.style.height = '0px';
+            }
+        });
     });
 });
 
@@ -522,6 +540,34 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById(selectorId).classList.remove('show');
     }
 
+    document.addEventListener("DOMContentLoaded", function() {
+        const listCard = document.querySelector('.list-card');
+        const toggleButton = document.getElementById('toggleButtonItems');
+    
+        toggleButton.addEventListener('click', function() {
+            if (listCard.classList.contains('list-card')) {
+                listCard.classList.remove('list-card');
+                toggleButton.textContent = 'Ẩn bớt';
+            } else {
+                listCard.classList.add('list-card');
+                toggleButton.textContent = 'Xem thêm';
+            }
+        });
+    });
+//lịch trình airline ticket
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.ab-item-content3').forEach((item, index) => {
+        item.addEventListener('click', function() {
+            const content = document.querySelectorAll('.air-booking-content')[index];
+            
+            if (content.style.height === '0px' || content.style.height === '') {
+                content.style.height = content.scrollHeight + 'px';
+            } else {
+                content.style.height = '0px';
+            }
+        });
+    });
+    });
 //SEARCH TIME - GUEST - 1
 // Khởi tạo flatpickr cho ngày đi
 let departureDateTextMain = flatpickr("#departureDateText", {
@@ -629,7 +675,6 @@ const guestPickerContainerMain = document.getElementById('guestPickerContainer')
 });
 
 
-
 //SEARCH HOTEL - MAIN
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('locationText').addEventListener('click', (event) => {
@@ -660,7 +705,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 });
-
 
 // SEARCH TIME - GUEST - 2
 // Khởi tạo flatpickr cho ngày đi
@@ -694,6 +738,7 @@ let returnDateTextMain2 = flatpickr("#returnDateText2", {
         }
     }
 });
+
 //dropdown số khách 
 document.addEventListener('DOMContentLoaded', function() {
     const guestPickerContainerMain2 = document.getElementById('guestPickerContainer2');
@@ -808,7 +853,6 @@ window.addEventListener('click', (event) => {
 });
 
 
-
 //-------------------------------JS HOTEL BOOKING T3-----------------------------------
 
   //SEARCH-HOTEL BOOKING
@@ -908,6 +952,12 @@ let returnDateText = flatpickr("#returnDateText", {
 
 
 });
+
+//utilities shrink
+
+document.getElementById("up-down").addEventListener("click", function() {
+    document.getElementById("utilities-left").classList.toggle("shrink");
+  });
 //total-price
 
   const basePrice = 1785000; // Giá tiền cố định
@@ -972,11 +1022,12 @@ introduceMenuItem.forEach(item => {
         this.classList.add('active');
     });
 });
-//utilities shrink
 
-document.getElementById("up-down").addEventListener("click", function() {
-    document.getElementById("utilities-left").classList.toggle("shrink");
-  });
+// //utilities shrink
+
+// document.getElementById("up-down").addEventListener("click", function() {
+//     document.getElementById("utilities-left").classList.toggle("shrink");
+//   });
 
   //-----------------------------------------JS HOTEL DETAIL - T4------------------------------------------------------
 
@@ -1062,4 +1113,4 @@ function showNotification(message) {
         notification.classList.remove('show');
     }, 3000);
 }
-  
+

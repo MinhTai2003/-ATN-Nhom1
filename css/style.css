@@ -1283,6 +1283,16 @@ input{
     height: auto;
     transition: 2s all;
 }
+#air-booking-item-1{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: 2s all;
+}
+#air-booking-item-1.shrink{
+    height: auto;
+    transition: 2s all;
+}
 
 .question-item-1 .btext-1, .question-item-2 .btext-1,
 .question-item-3 .btext-1, .question-item-4 .btext-1,
@@ -2135,8 +2145,9 @@ input{
 .content-main-left{
     position: relative;
     width: 20%;
-    height: auto;
+    height: 81.5em;
     border: 1px solid rgb(14, 102, 226);
+    overflow: hidden;
 }
 .filter-title-hotelitem{
     position: relative;
@@ -2158,6 +2169,7 @@ input{
 .list-filter{
     display: flex;
     flex-direction: column;
+  
 }
 .filter-item{
     padding: 25px 15px 5px;
@@ -2188,10 +2200,15 @@ input{
 .form-4.expanded{
     height: auto;
 }
+
+.content-main-left.expanded{
+    height: auto;
+}
 #toggleSeemoreHide{
     color: rgb(22, 109, 209);
     padding: 10px 0;
     cursor: pointer;
+    margin-left: 15px;
 }
 #toggleSeemoreHide:hover{
     color: rgb(11, 117, 239);
@@ -2242,6 +2259,17 @@ input{
 }
 
 /*card*/
+#toggleButtonItems{
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%);
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #e9680c;
+    color: #e9680c;
+    border-radius: 5px;
+    background-color: #fff;
+}
 .list-card{
     width: 100%;
     height: auto;
@@ -2250,6 +2278,8 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 .card-item{
     position: relative;
@@ -2259,6 +2289,9 @@ input{
     margin-bottom: 30px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.list-card .card-item:nth-child(n+6) {
+    display: none;
 }
 .card-item:hover{
     box-shadow: rgba(226, 127, 14, 0.5) 2px 3px 8px;
@@ -2369,7 +2402,7 @@ input{
 }
 .highlights-title > i{
     color: #757575;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s all;
 }
 .highlights-title.rotate > i{
     transform: rotate(180deg);
@@ -2377,12 +2410,9 @@ input{
 .highlights-content{
     height: 0;
     overflow: hidden;
-    transition: 2s all;
+    transition: 0.8s all;
 }
-.highlights-content.shrink{
-    height: auto;
-    transition: 5s all;
-}
+
 .highlight-content-item{
     display: flex;
     align-items: center;
@@ -5126,19 +5156,15 @@ button.arrowRight-tour {
     font-weight: bold;
     padding: 10px 25px;
 }
-#air-booking-content-1{
-    width: 55em;
+.air-booking-content {
+    overflow: hidden;
     height: 0;
-    padding: 20px;
-    background-color: #f4f4f475;
-}
-#air-booking-content-1 .shrink{
-    height: auto;
+    transition: height 0.3s ease-in-out;
 }
 .ab-content-title{
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 .ab-content-combo{
     display: flex;
